@@ -48,4 +48,28 @@ public class Dict {
      */
     public static String SIGNTYPE_SHA256 = "SHA256";
 
+    /**
+     * 身份证
+     */
+    public static String CERTTYPE_IDENTITY_CARD = "IDENTITY_CARD";
+
+    /**
+     * 护照
+     */
+    public static String CERTTYPE_PASSPORT = "PASSPORT";
+
+    /**
+     * 军官证
+     */
+    public static String CERTTYPE_OFFICER_CARD = "OFFICER_CARD";
+
+    /**
+     * 士兵证
+     */
+    public static String CERTTYPE_SOLDIER_CARD = "SOLDIER_CARD";
+
+    /**
+     * 户口本
+     */
+    public static String CERTTYPE_HUKOU = "HUKOU";
 }

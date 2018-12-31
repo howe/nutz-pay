@@ -131,6 +131,22 @@ public class CreateReq extends BaseReq {
     }
 
     /**
+     * 支付总金额
+     * <p>
+     * 单位分
+     * 若divisionFlag为true，则：totalAmount = subOrders字段中的所有totalAmount值之和加上 platformAmount值 = goods中的所有subOrderAmount值之和。
+     */
+    private Integer totalAmount;
+
+    public Integer getTotalAmount() {
+        return totalAmount;
+    }
+
+    public void setTotalAmount(Integer totalAmount) {
+        this.totalAmount = totalAmount;
+    }
+
+    /**
      * 支付结果通知地址
      * 选填
      */
