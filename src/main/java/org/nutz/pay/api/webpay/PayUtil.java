@@ -37,7 +37,7 @@ public class PayUtil {
         } else if (Strings.isBlank(req.getSign())) {
             throw new NullPointerException("sign为空");
         } else {
-            return Dict.UMS_WEBPAY_API_GET_GATEWAY + "?" + Util.buildParmas(Lang.obj2map(req));
+            return Dict.UMS_WEBPAY_API_GET_DEV_GATEWAY + "?" + Util.buildParmas(Lang.obj2map(req));
         }
     }
 }
