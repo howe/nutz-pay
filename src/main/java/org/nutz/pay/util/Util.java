@@ -41,7 +41,7 @@ public class Util {
                     return Lang.sha256(Util.buildParmas(params, new String[]{signName}) + key);
                 } else {
                     System.out.println(Util.buildParmas(params, new String[]{signName}) + key);
-                    return Lang.md5(Util.buildParmas(params, new String[]{signName}) + key);
+                    return Lang.md5(Util.buildParmas(params, new String[]{signName}) + key).toUpperCase();
                 }
             }
         } catch (Exception e) {
