@@ -38,9 +38,10 @@ public class Util {
                 throw new NullPointerException("加密钥为空");
             } else {
                 if (Strings.equalsIgnoreCase(signType, "HMAC-SHA256")) {
-                    return Lang.sha256(Util.Url.encode(Util.buildParmas(params, new String[]{signName})) + key);
+                    return Lang.sha256(Util.buildParmas(params, new String[]{signName}) + key);
                 } else {
-                    return Lang.md5(Util.Url.encode(Util.buildParmas(params, new String[]{signName})) + key);
+                    System.out.println(Util.buildParmas(params, new String[]{signName}) + key);
+                    return Lang.md5(Util.buildParmas(params, new String[]{signName}) + key);
                 }
             }
         } catch (Exception e) {
@@ -64,13 +65,13 @@ public class Util {
             return false;
         } else {
             if (Strings.equalsIgnoreCase(signType, "HMAC-SHA256")) {
-                if (Strings.equalsIgnoreCase(Lang.sha256(Util.Url.encode(Util.buildParmas(params, new String[]{signName})) + key), sign)) {
+                if (Strings.equalsIgnoreCase(Lang.sha256(Util.buildParmas(params, new String[]{signName}) + key), sign)) {
                     return true;
                 } else {
                     return false;
                 }
             } else {
-                if (Strings.equalsIgnoreCase(Lang.md5(Util.Url.encode(Util.buildParmas(params, new String[]{signName})) + key), sign)) {
+                if (Strings.equalsIgnoreCase(Lang.md5(Util.buildParmas(params, new String[]{signName}) + key), sign)) {
                     return true;
                 } else {
                     return false;
