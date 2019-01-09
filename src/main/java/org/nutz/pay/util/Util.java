@@ -64,7 +64,7 @@ public class Util {
         if (Lang.isEmpty(params) || Strings.isBlank(key)) {
             return false;
         } else {
-            if (Strings.equalsIgnoreCase(signType, "HMAC-SHA256")) {
+            if (Strings.equalsIgnoreCase(signType, "SHA256")) {
                 if (Strings.equalsIgnoreCase(Lang.sha256(Util.buildParmas(params, new String[]{signName}) + key), sign)) {
                     return true;
                 } else {
