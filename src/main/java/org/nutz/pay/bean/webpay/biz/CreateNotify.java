@@ -404,4 +404,24 @@ public class CreateNotify {
     public void setNotifyId(String notifyId) {
         this.notifyId = notifyId;
     }
+
+    private String subInst;
+
+    public String getSubInst() {
+        return subInst;
+    }
+
+    public void setSubInst(String subInst) {
+        this.subInst = subInst;
+    }
+
+    private String vu;
+
+    public String getVu() {
+        return vu;
+    }
+
+    public void setVu(String vu) {
+        this.vu = vu;
+    }
 }

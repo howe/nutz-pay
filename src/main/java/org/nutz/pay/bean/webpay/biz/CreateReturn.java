@@ -378,4 +378,24 @@ public class CreateReturn {
     public void setTargetSys(String targetSys) {
         this.targetSys = targetSys;
     }
+
+    private String subInst;
+
+    public String getSubInst() {
+        return subInst;
+    }
+
+    public void setSubInst(String subInst) {
+        this.subInst = subInst;
+    }
+
+    private String oL;
+
+    public String getoL() {
+        return oL;
+    }
+
+    public void setoL(String oL) {
+        this.oL = oL;
+    }
 }
