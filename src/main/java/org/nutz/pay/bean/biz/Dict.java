@@ -15,6 +15,8 @@ public class Dict {
     public static String UMS_QR_API_POST_GATEWAY = "https://qr.chinaums.com/bills/qrCode.do";
     public static String UMS_QR_API_POST_DEV_GATEWAY = "https://qr-test2.chinaums.com/bills/qrCode.do";
 
+    public static final String DATE_FORMART_FULL = "yyyy-MM-dd HH:mm:ss";
+    public static final String DATE_FORMART = "yyyy-MM-dd";
 
     /**
      * 微信公众号支付
