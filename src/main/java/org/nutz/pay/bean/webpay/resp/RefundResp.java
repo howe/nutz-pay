@@ -1,7 +1,5 @@
 package org.nutz.pay.bean.webpay.resp;
 
-import org.nutz.pay.bean.BaseResp;
-
 /**
  * Created by Jianghao on 2019/1/9
  *

@@ -12,6 +12,10 @@ public class Dict {
     public static String UMS_WEBPAY_API_POST_GATEWAY = "https://qr.chinaums.com/netpay-route-server/api/";
     public static String UMS_WEBPAY_API_POST_DEV_GATEWAY = "https://qr-test2.chinaums.com/netpay-route-server/api/";
 
+    public static String UMS_QR_API_POST_GATEWAY = "https://qr.chinaums.com/bills/qrCode.do";
+    public static String UMS_QR_API_POST_DEV_GATEWAY = "https://qr-test2.chinaums.com/bills/qrCode.do";
+
+
     /**
      * 微信公众号支付
      */

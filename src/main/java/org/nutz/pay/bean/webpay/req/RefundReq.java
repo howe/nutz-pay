@@ -1,6 +1,5 @@
 package org.nutz.pay.bean.webpay.req;
 
-import org.nutz.pay.bean.BaseReq;
 import org.nutz.pay.bean.biz.SubOrder;
 
 import java.util.List;

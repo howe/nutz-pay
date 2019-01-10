@@ -1,4 +1,4 @@
-package org.nutz.pay.bean;
+package org.nutz.pay.bean.webpay.req;
 
 import java.io.Serializable;
 

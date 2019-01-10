@@ -1,4 +1,4 @@
-package org.nutz.pay.bean;
+package org.nutz.pay.bean.webpay.resp;
 
 import java.io.Serializable;
 
@@ -161,6 +161,17 @@ public class BaseResp implements Serializable {
 
     public void setMerOrderId(String merOrderId) {
         this.merOrderId = merOrderId;
+    }
+
+
+    private String connectSys;
+
+    public String getConnectSys() {
+        return connectSys;
+    }
+
+    public void setConnectSys(String connectSys) {
+        this.connectSys = connectSys;
     }
 
     /**
