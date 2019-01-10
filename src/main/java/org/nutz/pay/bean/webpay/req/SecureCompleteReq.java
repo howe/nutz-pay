@@ -21,4 +21,8 @@ public class SecureCompleteReq extends BaseReq {
     public void setCompletedAmount(Integer completedAmount) {
         this.completedAmount = completedAmount;
     }
+
+    public SecureCompleteReq() {
+        this.setMsgType("secureComplete");
+    }
 }

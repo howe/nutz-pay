@@ -7,4 +7,8 @@ package org.nutz.pay.bean.webpay.req;
  * @howechiang
  */
 public class QueryReq extends BaseReq {
+
+    public QueryReq() {
+        this.setMsgType("query");
+    }
 }

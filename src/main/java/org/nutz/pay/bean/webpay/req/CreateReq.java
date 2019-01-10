@@ -20,13 +20,13 @@ public class CreateReq extends BaseReq {
      * （trade.jsPay）支付 和 银联云闪付（acp.jsPay）。
      * 若为true，则goods字段和subOrders字段不能同时为空；且secureTransaction字段上送false或不上送。
      */
-    private Boolean divisionFlag;
+    private boolean divisionFlag;
 
-    public Boolean getDivisionFlag() {
+    public boolean isDivisionFlag() {
         return divisionFlag;
     }
 
-    public void setDivisionFlag(Boolean divisionFlag) {
+    public void setDivisionFlag(boolean divisionFlag) {
         this.divisionFlag = divisionFlag;
     }
 
@@ -281,13 +281,13 @@ public class CreateReq extends BaseReq {
      * 选填
      * 取值：true或false，默认false
      */
-    private Boolean limitCreditCard;
+    private boolean limitCreditCard;
 
-    public Boolean getLimitCreditCard() {
+    public boolean isLimitCreditCard() {
         return limitCreditCard;
     }
 
-    public void setLimitCreditCard(Boolean limitCreditCard) {
+    public void setLimitCreditCard(boolean limitCreditCard) {
         this.limitCreditCard = limitCreditCard;
     }
 
@@ -300,15 +300,14 @@ public class CreateReq extends BaseReq {
      * 调用担保撤销接口，则全部资金退还给用户。
      * 30天后 没有主动调用担保完成 且 没有主动调用担保撤销的交易 将会自动按撤销处理。
      */
-    private Boolean secureTransaction;
+    private boolean secureTransaction;
 
-    public Boolean getSecureTransaction() {
+    public boolean isSecureTransaction() {
         return secureTransaction;
     }
 
-    public void setSecureTransaction(Boolean secureTransaction) {
+    public void setSecureTransaction(boolean secureTransaction) {
         this.secureTransaction = secureTransaction;
     }
-
 }
 

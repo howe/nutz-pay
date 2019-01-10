@@ -58,8 +58,8 @@ public class WebpayUtil {
             throw new NullPointerException("msgSrc为空");
         } else if (Strings.isBlank(req.getRequestTimestamp())) {
             throw new NullPointerException("requestTimestamp为空");
-        } else if (Strings.isBlank(req.getMsgType())) {
-            throw new NullPointerException("msgType为空");
+        } else if (!Strings.equalsIgnoreCase(req.getMsgType(), "query")) {
+            throw new NullPointerException("msgType错误");
         } else if (Strings.isBlank(req.getMerOrderId())) {
             throw new NullPointerException("merOrderId为空");
         } else if (Strings.isBlank(req.getMid())) {
@@ -94,8 +94,8 @@ public class WebpayUtil {
             throw new NullPointerException("msgSrc为空");
         } else if (Strings.isBlank(req.getRequestTimestamp())) {
             throw new NullPointerException("requestTimestamp为空");
-        } else if (Strings.isBlank(req.getMsgType())) {
-            throw new NullPointerException("msgType为空");
+        } else if (!Strings.equalsIgnoreCase(req.getMsgType(), "secureCancel")) {
+            throw new NullPointerException("msgType错误");
         } else if (Strings.isBlank(req.getMerOrderId())) {
             throw new NullPointerException("merOrderId为空");
         } else if (Strings.isBlank(req.getMid())) {
@@ -130,8 +130,8 @@ public class WebpayUtil {
             throw new NullPointerException("msgSrc为空");
         } else if (Strings.isBlank(req.getRequestTimestamp())) {
             throw new NullPointerException("requestTimestamp为空");
-        } else if (Strings.isBlank(req.getMsgType())) {
-            throw new NullPointerException("msgType为空");
+        } else if (!Strings.equalsIgnoreCase(req.getMsgType(), "secureComplete")) {
+            throw new NullPointerException("msgType错误");
         } else if (Strings.isBlank(req.getMerOrderId())) {
             throw new NullPointerException("merOrderId为空");
         } else if (Strings.isBlank(req.getMid())) {
@@ -168,8 +168,8 @@ public class WebpayUtil {
             throw new NullPointerException("msgSrc为空");
         } else if (Strings.isBlank(req.getRequestTimestamp())) {
             throw new NullPointerException("requestTimestamp为空");
-        } else if (Strings.isBlank(req.getMsgType())) {
-            throw new NullPointerException("msgType为空");
+        } else if (!Strings.equalsIgnoreCase(req.getMsgType(), "refund")) {
+            throw new NullPointerException("msgType错误");
         } else if (Strings.isBlank(req.getMerOrderId())) {
             throw new NullPointerException("merOrderId为空");
         } else if (Strings.isBlank(req.getMid())) {
@@ -206,8 +206,8 @@ public class WebpayUtil {
             throw new NullPointerException("msgSrc为空");
         } else if (Strings.isBlank(req.getRequestTimestamp())) {
             throw new NullPointerException("requestTimestamp为空");
-        } else if (Strings.isBlank(req.getMsgType())) {
-            throw new NullPointerException("msgType为空");
+        } else if (!Strings.equalsIgnoreCase(req.getMsgType(), "close")) {
+            throw new NullPointerException("msgType错误");
         } else if (Strings.isBlank(req.getMerOrderId())) {
             throw new NullPointerException("merOrderId为空");
         } else if (Strings.isBlank(req.getMid())) {

@@ -7,4 +7,8 @@ package org.nutz.pay.bean.webpay.req;
  * @howechiang
  */
 public class SecureCancelReq extends BaseReq {
+
+    public SecureCancelReq() {
+        this.setMsgType("secureCancel");
+    }
 }

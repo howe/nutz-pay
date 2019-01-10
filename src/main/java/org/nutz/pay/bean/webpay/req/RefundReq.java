@@ -86,4 +86,8 @@ public class RefundReq extends BaseReq {
     public void setRefundOrderId(String refundOrderId) {
         this.refundOrderId = refundOrderId;
     }
+
+    public RefundReq() {
+        this.setMsgType("refund");
+    }
 }
