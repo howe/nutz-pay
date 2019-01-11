@@ -232,4 +232,36 @@ public class WebpayUtil {
             }
         }
     }
+
+    /**
+     * 在原有下单功能上改造成创建支付二维码
+     *
+     * @param req
+     * @return
+     */
+    public static String createQRCode(CreateQRReq req) {
+        if (Strings.isBlank(req.getMsgSrc())) {
+            throw new NullPointerException("msgSrc为空");
+        } else if (Strings.isBlank(req.getRequestTimestamp())) {
+            throw new NullPointerException("requestTimestamp为空");
+        } else if (Strings.isBlank(req.getMerOrderId())) {
+            throw new NullPointerException("merOrderId为空");
+        } else if (Strings.isBlank(req.getMid())) {
+            throw new NullPointerException("mid为空");
+        } else if (Strings.isBlank(req.getTid())) {
+            throw new NullPointerException("tid为空");
+        } else if (Strings.isBlank(req.getInstMid())) {
+            throw new NullPointerException("instMid为空");
+        } else if (Strings.isBlank(req.getSignType())) {
+            throw new NullPointerException("signType为空");
+        } else if (Strings.isBlank(req.getSign())) {
+            throw new NullPointerException("sign为空");
+        } else if (Lang.isEmpty(req.getTotalAmount())) {
+            throw new NullPointerException("totalAmount为空");
+        } else if (Strings.isBlank(req.getSubOpenId())) {
+            throw new NullPointerException("subOpenId为空");
+        } else {
+            return Dict.UMS_WEBPAY_API_GET_DEV_GATEWAY + "?" + Util.buildParmas(Lang.obj2map(req));
+        }
+    }
 }
