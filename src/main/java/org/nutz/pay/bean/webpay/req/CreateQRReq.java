@@ -27,16 +27,16 @@ public class CreateQRReq extends BaseReq {
     }
 
     /**
-     * 二维码ICON路径
+     * 二维码ICON名称
      */
-    private String iconPath;
+    private String iconName;
 
-    public String getIconPath() {
-        return iconPath;
+    public String getIconName() {
+        return iconName;
     }
 
-    public void setIconPath(String iconPath) {
-        this.iconPath = iconPath;
+    public void setIconName(String iconName) {
+        this.iconName = iconName;
     }
 
     /**
