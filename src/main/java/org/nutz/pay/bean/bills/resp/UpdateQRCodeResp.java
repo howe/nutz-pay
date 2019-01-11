@@ -5,7 +5,7 @@ package org.nutz.pay.bean.bills.resp;
  *
  * @author howechiang
  */
-public class GetQRCodeResp extends BaseResp {
+public class UpdateQRCodeResp extends BaseResp {
 
     /**
      * 账单号，原样返回

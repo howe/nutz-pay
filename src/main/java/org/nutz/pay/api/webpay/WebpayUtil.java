@@ -40,6 +40,8 @@ public class WebpayUtil {
             throw new NullPointerException("signType为空");
         } else if (Strings.isBlank(req.getSign())) {
             throw new NullPointerException("sign为空");
+        } else if (Lang.isEmpty(req.getTotalAmount())) {
+            throw new NullPointerException("totalAmount为空");
         } else if (Strings.isBlank(req.getSubOpenId())) {
             throw new NullPointerException("subOpenId为空");
         } else {

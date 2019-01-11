@@ -1,14 +1,14 @@
-package org.nutz.pay.bean.bills.resp;
+package org.nutz.pay.bean.bills.req;
 
 /**
  * Copyright 2018 Freshplay Co ltd
  *
  * @author howechiang
  */
-public class GetQRCodeResp extends BaseResp {
+public class QueryReq extends BaseReq {
 
     /**
-     * 账单号，原样返回
+     * 账单号
      */
     private String billNo;
 
@@ -21,7 +21,7 @@ public class GetQRCodeResp extends BaseResp {
     }
 
     /**
-     * 账单日期，原样返回
+     * 账单日期，格式yyyy-MM-dd
      */
     private String billDate;
 
@@ -34,15 +34,16 @@ public class GetQRCodeResp extends BaseResp {
     }
 
     /**
-     * 账单二维码
+     * 退款订单号
+     * 当需要当前帐单退货记录的时候上送
      */
-    private String billQRCode;
+    private String refundOrderId;
 
-    public String getBillQRCode() {
-        return billQRCode;
+    public String getRefundOrderId() {
+        return refundOrderId;
     }
 
-    public void setBillQRCode(String billQRCode) {
-        this.billQRCode = billQRCode;
+    public void setRefundOrderId(String refundOrderId) {
+        this.refundOrderId = refundOrderId;
     }
 }
