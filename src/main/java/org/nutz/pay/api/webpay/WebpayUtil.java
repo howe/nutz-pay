@@ -1,6 +1,5 @@
 package org.nutz.pay.api.webpay;
 
-import org.nutz.img.Images;
 import org.nutz.json.Json;
 import org.nutz.json.JsonFormat;
 import org.nutz.lang.Lang;
@@ -16,8 +15,6 @@ import org.nutz.qrcode.QRCodeFormat;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.IOException;
 import java.util.Base64;
 
 /**
