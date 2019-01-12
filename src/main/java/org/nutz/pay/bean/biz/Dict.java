@@ -79,7 +79,16 @@ public class Dict {
      */
     public static String CERTTYPE_HUKOU = "HUKOU";
 
+    /**
+     * 微信图标
+     */
     public static String QRCODE_PAY_ICON_WEIXIN = "weixin.png";
+    /**
+     * 支付宝图标
+     */
     public static String QRCODE_PAY_ICON_ALIPAY = "alipay.png";
+    /**
+     * 银联图标
+     */
     public static String QRCODE_PAY_ICON_UNIONPAY = "unionpay.png";
 }
