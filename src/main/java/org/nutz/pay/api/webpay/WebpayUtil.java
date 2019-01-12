@@ -276,11 +276,11 @@ public class WebpayUtil {
                 format.setSize(Lang.isEmpty(req.getSize()) ? 250 : req.getSize())
                         .setEncode("UTF-8") // 设置文字编码
                         .setErrorCorrectionLevel('H') // 设置错误修正等级
-                        .setForeGroundColor("#2F4F4F") // 设置前景色
-                        .setBackGroundColor("#808080") // 设置背景色
+                        .setForeGroundColor("#000000") // 设置前景色
+                        .setBackGroundColor("#FFFFFF") // 设置背景色
                         .setImageFormat("jpg") // 设置生成的图片格式
-                        .setMargin(0) // 设置图片空白区域, 单位 - 格（外填充）
-                        .setIcon(Images.read(WebpayUtil.class.getClassLoader().getResourceAsStream(req.getIconName()))); // 设置 icon
+                        .setMargin(0); // 设置图片空白区域, 单位 - 格（外填充）
+//                        .setIcon(ImageIO.read(WebpayUtil.class.getClassLoader().getResource(req.getIconName()))); // 设置 icon
                 BufferedImage image = QRCode.toQRCode(Dict.UMS_WEBPAY_API_GET_DEV_GATEWAY + "?" + Util.buildParmas(Lang.obj2map(req)), format);
                 ByteArrayOutputStream bos = new ByteArrayOutputStream();
                 ImageIO.write(image, "jpg", bos);
