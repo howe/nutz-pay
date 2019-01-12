@@ -249,45 +249,49 @@ public class WebpayUtil {
      * @param req
      * @return
      */
-    public static String createQRCode(CreateQRReq req) throws IOException {
-        if (Strings.isBlank(req.getMsgSrc())) {
-            throw new NullPointerException("msgSrc为空");
-        } else if (Strings.isBlank(req.getRequestTimestamp())) {
-            throw new NullPointerException("requestTimestamp为空");
-        } else if (Strings.isBlank(req.getMerOrderId())) {
-            throw new NullPointerException("merOrderId为空");
-        } else if (Strings.isBlank(req.getMid())) {
-            throw new NullPointerException("mid为空");
-        } else if (Strings.isBlank(req.getTid())) {
-            throw new NullPointerException("tid为空");
-        } else if (Strings.isBlank(req.getInstMid())) {
-            throw new NullPointerException("instMid为空");
-        } else if (Strings.isBlank(req.getSignType())) {
-            throw new NullPointerException("signType为空");
-        } else if (Strings.isBlank(req.getSign())) {
-            throw new NullPointerException("sign为空");
-        } else if (Lang.isEmpty(req.getTotalAmount())) {
-            throw new NullPointerException("totalAmount为空");
-        } else if (Strings.isBlank(req.getSubOpenId())) {
-            throw new NullPointerException("subOpenId为空");
-        } else {
-            QRCodeFormat format = QRCodeFormat.NEW();
-            format.setSize(Lang.isEmpty(req.getSize()) ? 250 : req.getSize())
-                    .setEncode("UTF-8") // 设置文字编码
-                    .setErrorCorrectionLevel('H') // 设置错误修正等级
-                    .setForeGroundColor("#2F4F4F") // 设置前景色
-                    .setBackGroundColor("#808080") // 设置背景色
-                    .setImageFormat("jpg") // 设置生成的图片格式
-                    .setMargin(0) // 设置图片空白区域, 单位 - 格（外填充）
-                    .setIcon(Images.read(WebpayUtil.class.getClassLoader().getResourceAsStream(req.getIconName()))); // 设置 icon
-            BufferedImage image = QRCode.toQRCode(Dict.UMS_WEBPAY_API_GET_DEV_GATEWAY + "?" + Util.buildParmas(Lang.obj2map(req)), format);
-            ByteArrayOutputStream bos = new ByteArrayOutputStream();
-            ImageIO.write(image, "jpg", bos);
-            byte[] imageBytes = bos.toByteArray();
-            Base64.Encoder encoder = Base64.getEncoder();
-            String imageString = encoder.encodeToString(imageBytes);
-            bos.close();
-            return imageString;
+    public static String createQRCode(CreateQRReq req) {
+        try {
+            if (Strings.isBlank(req.getMsgSrc())) {
+                throw new NullPointerException("msgSrc为空");
+            } else if (Strings.isBlank(req.getRequestTimestamp())) {
+                throw new NullPointerException("requestTimestamp为空");
+            } else if (Strings.isBlank(req.getMerOrderId())) {
+                throw new NullPointerException("merOrderId为空");
+            } else if (Strings.isBlank(req.getMid())) {
+                throw new NullPointerException("mid为空");
+            } else if (Strings.isBlank(req.getTid())) {
+                throw new NullPointerException("tid为空");
+            } else if (Strings.isBlank(req.getInstMid())) {
+                throw new NullPointerException("instMid为空");
+            } else if (Strings.isBlank(req.getSignType())) {
+                throw new NullPointerException("signType为空");
+            } else if (Strings.isBlank(req.getSign())) {
+                throw new NullPointerException("sign为空");
+            } else if (Lang.isEmpty(req.getTotalAmount())) {
+                throw new NullPointerException("totalAmount为空");
+            } else if (Strings.isBlank(req.getSubOpenId())) {
+                throw new NullPointerException("subOpenId为空");
+            } else {
+                QRCodeFormat format = QRCodeFormat.NEW();
+                format.setSize(Lang.isEmpty(req.getSize()) ? 250 : req.getSize())
+                        .setEncode("UTF-8") // 设置文字编码
+                        .setErrorCorrectionLevel('H') // 设置错误修正等级
+                        .setForeGroundColor("#2F4F4F") // 设置前景色
+                        .setBackGroundColor("#808080") // 设置背景色
+                        .setImageFormat("jpg") // 设置生成的图片格式
+                        .setMargin(0) // 设置图片空白区域, 单位 - 格（外填充）
+                        .setIcon(Images.read(WebpayUtil.class.getClassLoader().getResourceAsStream(req.getIconName()))); // 设置 icon
+                BufferedImage image = QRCode.toQRCode(Dict.UMS_WEBPAY_API_GET_DEV_GATEWAY + "?" + Util.buildParmas(Lang.obj2map(req)), format);
+                ByteArrayOutputStream bos = new ByteArrayOutputStream();
+                ImageIO.write(image, "jpg", bos);
+                byte[] imageBytes = bos.toByteArray();
+                Base64.Encoder encoder = Base64.getEncoder();
+                String imageString = encoder.encodeToString(imageBytes);
+                bos.close();
+                return "data:image/jpeg;base64," + imageString;
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e.getMessage());
         }
     }
 }
