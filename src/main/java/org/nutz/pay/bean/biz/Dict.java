@@ -78,4 +78,8 @@ public class Dict {
      * 户口本
      */
     public static String CERTTYPE_HUKOU = "HUKOU";
+
+    public static String QRCODE_PAY_ICON_WEIXIN = "weixin.png";
+    public static String QRCODE_PAY_ICON_ALIPAY = "alipay.png";
+    public static String QRCODE_PAY_ICON_UNIONPAY = "unionpay.png";
 }
