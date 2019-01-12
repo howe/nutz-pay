@@ -1,5 +1,6 @@
 package org.nutz.pay.api.webpay;
 
+import org.nutz.img.Images;
 import org.nutz.json.Json;
 import org.nutz.json.JsonFormat;
 import org.nutz.lang.Lang;
@@ -276,8 +277,8 @@ public class WebpayUtil {
                         .setForeGroundColor("#000000") // 设置前景色
                         .setBackGroundColor("#FFFFFF") // 设置背景色
                         .setImageFormat("jpg") // 设置生成的图片格式
-                        .setMargin(0); // 设置图片空白区域, 单位 - 格（外填充）
-//                        .setIcon(ImageIO.read(WebpayUtil.class.getClassLoader().getResource(req.getIconName()))); // 设置 icon
+                        .setMargin(0) // 设置图片空白区域, 单位 - 格（外填充）
+                        .setIcon(Images.read(WebpayUtil.class.getClassLoader().getResourceAsStream(req.getIconName()))); // 设置 icon
                 BufferedImage image = QRCode.toQRCode(Dict.UMS_WEBPAY_API_GET_DEV_GATEWAY + "?" + Util.buildParmas(Lang.obj2map(req)), format);
                 ByteArrayOutputStream bos = new ByteArrayOutputStream();
                 ImageIO.write(image, "jpg", bos);
