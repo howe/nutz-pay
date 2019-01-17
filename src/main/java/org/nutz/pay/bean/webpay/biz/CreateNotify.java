@@ -414,14 +414,4 @@ public class CreateNotify {
     public void setSubInst(String subInst) {
         this.subInst = subInst;
     }
-
-    private String vu;
-
-    public String getVu() {
-        return vu;
-    }
-
-    public void setVu(String vu) {
-        this.vu = vu;
-    }
 }

@@ -388,14 +388,4 @@ public class CreateReturn {
     public void setSubInst(String subInst) {
         this.subInst = subInst;
     }
-
-    private String oL;
-
-    public String getoL() {
-        return oL;
-    }
-
-    public void setoL(String oL) {
-        this.oL = oL;
-    }
 }
