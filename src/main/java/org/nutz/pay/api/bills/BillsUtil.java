@@ -43,8 +43,7 @@ public class BillsUtil {
         } else if (Strings.isBlank(req.getSign())) {
             throw new NullPointerException("sign为空");
         } else {
-            String json = HttpUtil.post(Dict.UMS_WEBPAY_API_POST_DEV_GATEWAY, Json.toJson(req, JsonFormat.compact()));
-            System.out.println(json);
+            String json = HttpUtil.post(Dict.UMS_WEBPAY_API_POST_GATEWAY, Json.toJson(req, JsonFormat.compact()));
             if (json.indexOf("errCode") > 0) {
                 return Json.fromJson(GetQRCodeResp.class, json);
             } else {
@@ -80,8 +79,7 @@ public class BillsUtil {
         } else if (Strings.isBlank(req.getSign())) {
             throw new NullPointerException("sign为空");
         } else {
-            String json = HttpUtil.post(Dict.UMS_WEBPAY_API_POST_DEV_GATEWAY, Json.toJson(req, JsonFormat.compact()));
-            System.out.println(json);
+            String json = HttpUtil.post(Dict.UMS_WEBPAY_API_POST_GATEWAY, Json.toJson(req, JsonFormat.compact()));
             if (json.indexOf("errCode") > 0) {
                 return Json.fromJson(UpdateQRCodeResp.class, json);
             } else {
@@ -116,8 +114,7 @@ public class BillsUtil {
         } else if (Strings.isBlank(req.getSign())) {
             throw new NullPointerException("sign为空");
         } else {
-            String json = HttpUtil.post(Dict.UMS_WEBPAY_API_POST_DEV_GATEWAY, Json.toJson(req, JsonFormat.compact()));
-            System.out.println(json);
+            String json = HttpUtil.post(Dict.UMS_WEBPAY_API_POST_GATEWAY, Json.toJson(req, JsonFormat.compact()));
             if (json.indexOf("errCode") > 0) {
                 return Json.fromJson(CloseQRCodeResp.class, json);
             } else {
@@ -154,8 +151,7 @@ public class BillsUtil {
         } else if (Strings.isBlank(req.getSign())) {
             throw new NullPointerException("sign为空");
         } else {
-            String json = HttpUtil.post(Dict.UMS_WEBPAY_API_POST_DEV_GATEWAY, Json.toJson(req, JsonFormat.compact()));
-            System.out.println(json);
+            String json = HttpUtil.post(Dict.UMS_WEBPAY_API_POST_GATEWAY, Json.toJson(req, JsonFormat.compact()));
             if (json.indexOf("errCode") > 0) {
                 return Json.fromJson(QueryResp.class, json);
             } else {
@@ -198,8 +194,7 @@ public class BillsUtil {
         } else if (Strings.isBlank(req.getSign())) {
             throw new NullPointerException("sign为空");
         } else {
-            String json = HttpUtil.post(Dict.UMS_WEBPAY_API_POST_DEV_GATEWAY, Json.toJson(req, JsonFormat.compact()));
-            System.out.println(json);
+            String json = HttpUtil.post(Dict.UMS_WEBPAY_API_POST_GATEWAY, Json.toJson(req, JsonFormat.compact()));
             if (json.indexOf("errCode") > 0) {
                 return Json.fromJson(RefundResp.class, json);
             } else {
@@ -236,8 +231,7 @@ public class BillsUtil {
         } else if (Strings.isBlank(req.getSign())) {
             throw new NullPointerException("sign为空");
         } else {
-            String json = HttpUtil.post(Dict.UMS_WEBPAY_API_POST_DEV_GATEWAY, Json.toJson(req, JsonFormat.compact()));
-            System.out.println(json);
+            String json = HttpUtil.post(Dict.UMS_WEBPAY_API_POST_GATEWAY, Json.toJson(req, JsonFormat.compact()));
             if (json.indexOf("errCode") > 0) {
                 return Json.fromJson(QueryQRCodeInfoResp.class, json);
             } else {
@@ -274,8 +268,7 @@ public class BillsUtil {
         } else if (Strings.isBlank(req.getSign())) {
             throw new NullPointerException("sign为空");
         } else {
-            String json = HttpUtil.post(Dict.UMS_WEBPAY_API_POST_DEV_GATEWAY, Json.toJson(req, JsonFormat.compact()));
-            System.out.println(json);
+            String json = HttpUtil.post(Dict.UMS_WEBPAY_API_POST_GATEWAY, Json.toJson(req, JsonFormat.compact()));
             if (json.indexOf("errCode") > 0) {
                 return Json.fromJson(SecureCancelResp.class, json);
             } else {
@@ -314,8 +307,7 @@ public class BillsUtil {
         } else if (Strings.isBlank(req.getSign())) {
             throw new NullPointerException("sign为空");
         } else {
-            String json = HttpUtil.post(Dict.UMS_WEBPAY_API_POST_DEV_GATEWAY, Json.toJson(req, JsonFormat.compact()));
-            System.out.println(json);
+            String json = HttpUtil.post(Dict.UMS_WEBPAY_API_POST_GATEWAY, Json.toJson(req, JsonFormat.compact()));
             if (json.indexOf("errCode") > 0) {
                 return Json.fromJson(SecureCompleteResp.class, json);
             } else {

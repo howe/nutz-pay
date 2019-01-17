@@ -53,7 +53,7 @@ public class WebpayUtil {
         } else if (Strings.isBlank(req.getSubOpenId())) {
             throw new NullPointerException("subOpenId为空");
         } else {
-            return Dict.UMS_WEBPAY_API_GET_DEV_GATEWAY + "?" + Util.buildParmas(Lang.obj2map(req));
+            return Dict.UMS_WEBPAY_API_GET_GATEWAY + "?" + Util.buildParmas(Lang.obj2map(req));
         }
     }
 
@@ -83,8 +83,7 @@ public class WebpayUtil {
         } else if (Strings.isBlank(req.getSign())) {
             throw new NullPointerException("sign为空");
         } else {
-            String json = HttpUtil.post(Dict.UMS_WEBPAY_API_POST_DEV_GATEWAY, Json.toJson(req, JsonFormat.compact()));
-            System.out.println(json);
+            String json = HttpUtil.post(Dict.UMS_WEBPAY_API_POST_GATEWAY, Json.toJson(req, JsonFormat.compact()));
             if (json.indexOf("errCode") > 0) {
                 return Json.fromJson(QueryResp.class, json);
             } else {
@@ -119,8 +118,7 @@ public class WebpayUtil {
         } else if (Strings.isBlank(req.getSign())) {
             throw new NullPointerException("sign为空");
         } else {
-            String json = HttpUtil.post(Dict.UMS_WEBPAY_API_POST_DEV_GATEWAY, Json.toJson(req, JsonFormat.compact()));
-            System.out.println(json);
+            String json = HttpUtil.post(Dict.UMS_WEBPAY_API_POST_GATEWAY, Json.toJson(req, JsonFormat.compact()));
             if (json.indexOf("errCode") > 0) {
                 return Json.fromJson(SecureCancelResp.class, json);
             } else {
@@ -157,8 +155,7 @@ public class WebpayUtil {
         } else if (Strings.isBlank(req.getSign())) {
             throw new NullPointerException("sign为空");
         } else {
-            String json = HttpUtil.post(Dict.UMS_WEBPAY_API_POST_DEV_GATEWAY, Json.toJson(req, JsonFormat.compact()));
-            System.out.println(json);
+            String json = HttpUtil.post(Dict.UMS_WEBPAY_API_POST_GATEWAY, Json.toJson(req, JsonFormat.compact()));
             if (json.indexOf("errCode") > 0) {
                 return Json.fromJson(SecureCompleteResp.class, json);
             } else {
@@ -195,8 +192,7 @@ public class WebpayUtil {
         } else if (Strings.isBlank(req.getSign())) {
             throw new NullPointerException("sign为空");
         } else {
-            String json = HttpUtil.post(Dict.UMS_WEBPAY_API_POST_DEV_GATEWAY, Json.toJson(req, JsonFormat.compact()));
-            System.out.println(json);
+            String json = HttpUtil.post(Dict.UMS_WEBPAY_API_POST_GATEWAY, Json.toJson(req, JsonFormat.compact()));
             if (json.indexOf("errCode") > 0) {
                 return Json.fromJson(RefundResp.class, json);
             } else {
@@ -231,8 +227,7 @@ public class WebpayUtil {
         } else if (Strings.isBlank(req.getSign())) {
             throw new NullPointerException("sign为空");
         } else {
-            String json = HttpUtil.post(Dict.UMS_WEBPAY_API_POST_DEV_GATEWAY, Json.toJson(req, JsonFormat.compact()));
-            System.out.println(json);
+            String json = HttpUtil.post(Dict.UMS_WEBPAY_API_POST_GATEWAY, Json.toJson(req, JsonFormat.compact()));
             if (json.indexOf("errCode") > 0) {
                 return Json.fromJson(CloseResp.class, json);
             } else {
@@ -272,14 +267,14 @@ public class WebpayUtil {
             } else {
                 QRCodeFormat format = QRCodeFormat.NEW();
                 format.setSize(Lang.isEmpty(req.getSize()) ? 250 : req.getSize())
-                        .setEncode("UTF-8") // 设置文字编码
-                        .setErrorCorrectionLevel('H') // 设置错误修正等级
-                        .setForeGroundColor("#000000") // 设置前景色
-                        .setBackGroundColor("#FFFFFF") // 设置背景色
-                        .setImageFormat("jpg") // 设置生成的图片格式
-                        .setMargin(0) // 设置图片空白区域, 单位 - 格（外填充）
-                        .setIcon(Images.read(WebpayUtil.class.getClassLoader().getResourceAsStream(req.getIconName()))); // 设置 icon
-                BufferedImage image = QRCode.toQRCode(Dict.UMS_WEBPAY_API_GET_DEV_GATEWAY + "?" + Util.buildParmas(Lang.obj2map(req)), format);
+                        .setEncode("UTF-8")
+                        .setErrorCorrectionLevel('H')
+                        .setForeGroundColor("#000000")
+                        .setBackGroundColor("#FFFFFF")
+                        .setImageFormat("jpg")
+                        .setMargin(1)
+                        .setIcon(Images.read(WebpayUtil.class.getClassLoader().getResourceAsStream(req.getIconName())));
+                BufferedImage image = QRCode.toQRCode(Dict.UMS_WEBPAY_API_GET_GATEWAY + "?" + Util.buildParmas(Lang.obj2map(req)), format);
                 ByteArrayOutputStream bos = new ByteArrayOutputStream();
                 ImageIO.write(image, "jpg", bos);
                 byte[] imageBytes = bos.toByteArray();

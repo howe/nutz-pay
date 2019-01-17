@@ -40,7 +40,6 @@ public class Util {
                 if (Strings.equalsIgnoreCase(signType, "HMAC-SHA256")) {
                     return Lang.sha256(Util.buildParmas(params, new String[]{signName}) + key);
                 } else {
-                    System.out.println(Util.buildParmas(params, new String[]{signName}) + key);
                     return Lang.md5(Util.buildParmas(params, new String[]{signName}) + key).toUpperCase();
                 }
             }
