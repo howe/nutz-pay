@@ -4,6 +4,8 @@ import org.nutz.lang.Encoding;
 import org.nutz.lang.Lang;
 import org.nutz.lang.Strings;
 import org.nutz.lang.util.NutMap;
+import org.nutz.pay.bean.poslink.req.GetAccessTokenReq;
+
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
@@ -18,6 +20,27 @@ import java.util.Map;
  * @author howechiang
  */
 public class Util {
+
+    /**
+     * AccessToken获取签名
+     *
+     * @param req
+     * @param appKey
+     * @return
+     */
+    public static String getSign(GetAccessTokenReq req, String appKey) {
+        if (Strings.isBlank(req.getAppId())) {
+            throw new NullPointerException("appId为空");
+        } else if (Strings.isBlank(req.getTimestamp())) {
+            throw new NullPointerException("timestamp为空");
+        } else if (Strings.isBlank(req.getNonce())) {
+            throw new NullPointerException("nonce为空");
+        } else if (Strings.isBlank(appKey)) {
+            throw new NullPointerException("appKey为空");
+        } else {
+            return Lang.sha1(req.getAppId() + req.getTimestamp() + req.getNonce() + appKey);
+        }
+    }
 
     /**
      * 签名

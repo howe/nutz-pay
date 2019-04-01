@@ -112,4 +112,18 @@ public class Good {
     public void setSubOrderAmount(Integer subOrderAmount) {
         this.subOrderAmount = subOrderAmount;
     }
+
+    /**
+     * 商品折扣
+     * 单位：分
+     */
+    private Integer discount;
+
+    public Integer getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(Integer discount) {
+        this.discount = discount;
+    }
 }
