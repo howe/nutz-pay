@@ -23,7 +23,7 @@ import java.util.Base64;
  *
  * @@author Freshplay Inc.
  */
-public class WebpayUtil {
+public class WebpayApi {
 
     /**
      * 下单请求
@@ -273,7 +273,7 @@ public class WebpayUtil {
                         .setBackGroundColor("#FFFFFF")
                         .setImageFormat("jpg")
                         .setMargin(1)
-                        .setIcon(Images.read(WebpayUtil.class.getClassLoader().getResourceAsStream(req.getIconName())));
+                        .setIcon(Images.read(WebpayApi.class.getClassLoader().getResourceAsStream(req.getIconName())));
                 BufferedImage image = QRCode.toQRCode(Dict.UMS_WEBPAY_API_GET_GATEWAY + "?" + Util.buildParmas(Lang.obj2map(req)), format);
                 ByteArrayOutputStream bos = new ByteArrayOutputStream();
                 ImageIO.write(image, "jpg", bos);

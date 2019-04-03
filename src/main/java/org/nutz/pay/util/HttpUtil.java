@@ -157,11 +157,45 @@ public class HttpUtil {
                 throw new Exception("url为空");
             } else if (!Strings.isUrl(url)) {
                 throw new Exception("url格式不正确");
-            } else if (Lang.isEmpty(json)) {
+            } else if (Strings.isEmpty(json)) {
                 throw new Exception("json为空");
             } else {
                 Request req = Request.create(url, Request.METHOD.POST);
                 req.getHeader().set("Content-Type", "application/json;charset=UTF-8");
+                req.setData(json);
+                Response resp = Sender.create(req).setSSLSocketFactory(Http.nopSSLSocketFactory()).send();
+                return resp.getContent();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw Lang.wrapThrow(e);
+        }
+    }
+
+    /**
+     * Post发送带Header信息的Json请求
+     *
+     * @param url
+     * @param header
+     * @param json
+     * @return
+     */
+    public static String post(String url, Header header, String json) {
+        try {
+            if (Strings.isBlank(url)) {
+                throw new Exception("url为空");
+            } else if (!Strings.isUrl(url)) {
+                throw new Exception("url格式不正确");
+            } else if (Lang.isEmpty(header)) {
+                throw new Exception("header为空");
+            } else if (header.getAll().isEmpty()) {
+                throw new Exception("header为空");
+            } else if (Strings.isBlank(json)) {
+                throw new Exception("json为空");
+            } else {
+                Request req = Request.create(url, Request.METHOD.POST);
+                req.getHeader().set("Content-Type", "application/json;charset=UTF-8");
+                req.setHeader(header);
                 req.setData(json);
                 Response resp = Sender.create(req).setSSLSocketFactory(Http.nopSSLSocketFactory()).send();
                 return resp.getContent();

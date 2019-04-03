@@ -5,5 +5,5 @@ package org.nutz.pay.bean.poslink.resp;
  *
  * @author howechiang
  */
-public class ActiveterminalResp extends BaseResp {
+public class ReversepaymentResp extends BaseResp {
 }

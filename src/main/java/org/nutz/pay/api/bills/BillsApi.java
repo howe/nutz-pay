@@ -14,7 +14,7 @@ import org.nutz.pay.util.HttpUtil;
  *
  * @author howechiang
  */
-public class BillsUtil {
+public class BillsApi {
 
     /**
      * 获取二维码

@@ -15,14 +15,23 @@ public class Dict {
     public static String UMS_QR_API_POST_GATEWAY = "https://qr.chinaums.com/bills/qrCode.do";
     public static String UMS_QR_API_POST_DEV_GATEWAY = "https://qr-test2.chinaums.com/bills/qrCode.do";
 
-    public static String UMS_TOKEN_API_POST_GATEWAY = "http://58.247.0.18:29015/v1/token/access";
-    public static String UMS_TOKEN_API_POST_DEV_GATEWAY = "https://api-mop.chinaums.com/v1/token/access";
+    public static String UMS_TOKEN_API_POST_DEV_GATEWAY = "http://58.247.0.18:29015/v1/token/access";
+    public static String UMS_TOKEN_API_POST_GATEWAY = "https://api-mop.chinaums.com/v1/token/access";
 
-    public static String UMS_POSLINK_API_POST_GATEWAY = "http://58.247.0.18:29015/v2/poslink/transaction/activeterminal";
-    public static String UMS_POSLINK_API_POST_DEV_GATEWAY = "https://api-mop.chinaums.com/v2/poslink/transaction/activeterminal";
+    public static String UMS_POSLINK_API_POST_DEV_GATEWAY = "http://58.247.0.18:29015/v2/poslink/";
+    public static String UMS_POSLINK_API_POST_GATEWAY = "https://api-mop.chinaums.com/v2/poslink/";
 
     public static final String DATE_FORMART_FULL = "yyyy-MM-dd HH:mm:ss";
     public static final String DATE_FORMART = "yyyy-MM-dd";
+    public static final String DATE_FORMART_FULL_BASE = "yyyyMMddHHmmss";
+
+    public static final String POSLINK_TRANSACTIONCURRENCYCODE = "156";
+
+    public static final String POSLINK_TRANSACTIONCURRENCYCODE_E_CASH = "E_CASH";
+    public static final String POSLINK_TRANSACTIONCURRENCYCODE_SOUNDWAVE = "SOUNDWAVE";
+    public static final String POSLINK_TRANSACTIONCURRENCYCODE_NFC = "NFC";
+    public static final String POSLINK_TRANSACTIONCURRENCYCODE_CODE_SCAN = "CODE_SCAN";
+    public static final String POSLINK_TRANSACTIONCURRENCYCODE_MANUAL = "MANUAL";
 
     /**
      * 微信公众号支付

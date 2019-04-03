@@ -12,6 +12,19 @@ public class BaseReq implements Serializable {
     private static final long serialVersionUID = 1L;
 
     /**
+     * 认证内容
+     */
+    private String authorization;
+
+    public String getAuthorization() {
+        return authorization;
+    }
+
+    public void setAuthorization(String authorization) {
+        this.authorization = authorization;
+    }
+
+    /**
      * 商户号
      */
     private String merchantCode;
