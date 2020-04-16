@@ -65,7 +65,7 @@ public class PoslinkApi {
             } else {
                 Header header = Header.create();
                 header.set("OPEN-ACCESS-TOKEN AccessToken", req.getAuthorization());
-                String json = HttpUtil.post(Dict.UMS_POSLINK_API_POST_DEV_GATEWAY + "transaction/activeterminal", header, Json.toJson(req, JsonFormat.compact()));
+                String json = HttpUtil.post(Dict.UMS_POSLINK_API_POST_GATEWAY + "transaction/activeterminal", header, Json.toJson(req, JsonFormat.compact()));
                 if (json.indexOf("errCode") > 0) {
                     return Json.fromJson(ActiveterminalResp.class, json);
                 } else {
@@ -106,7 +106,7 @@ public class PoslinkApi {
             } else {
                 Header header = Header.create();
                 header.set("OPEN-ACCESS-TOKEN AccessToken", req.getAuthorization());
-                String json = HttpUtil.post(Dict.UMS_POSLINK_API_POST_DEV_GATEWAY + "transaction/pay", header, Json.toJson(req, JsonFormat.compact()));
+                String json = HttpUtil.post(Dict.UMS_POSLINK_API_POST_GATEWAY + "transaction/pay", header, Json.toJson(req, JsonFormat.compact()));
                 if (json.indexOf("errCode") > 0) {
                     return Json.fromJson(PayResp.class, json);
                 } else {
@@ -141,7 +141,7 @@ public class PoslinkApi {
             } else {
                 Header header = Header.create();
                 header.set("OPEN-ACCESS-TOKEN AccessToken", req.getAuthorization());
-                String json = HttpUtil.post(Dict.UMS_POSLINK_API_POST_DEV_GATEWAY + "transaction/reversepayment", header, Json.toJson(req, JsonFormat.compact()));
+                String json = HttpUtil.post(Dict.UMS_POSLINK_API_POST_GATEWAY + "transaction/reversepayment", header, Json.toJson(req, JsonFormat.compact()));
                 if (json.indexOf("errCode") > 0) {
                     return Json.fromJson(ReversepaymentResp.class, json);
                 } else {
@@ -172,7 +172,7 @@ public class PoslinkApi {
             } else {
                 Header header = Header.create();
                 header.set("OPEN-ACCESS-TOKEN AccessToken", req.getAuthorization());
-                String json = HttpUtil.post(Dict.UMS_POSLINK_API_POST_DEV_GATEWAY + "transaction/voidpayment", header, Json.toJson(req, JsonFormat.compact()));
+                String json = HttpUtil.post(Dict.UMS_POSLINK_API_POST_GATEWAY + "transaction/voidpayment", header, Json.toJson(req, JsonFormat.compact()));
                 if (json.indexOf("errCode") > 0) {
                     return Json.fromJson(VoidpaymentResp.class, json);
                 } else {
@@ -207,7 +207,7 @@ public class PoslinkApi {
             } else {
                 Header header = Header.create();
                 header.set("OPEN-ACCESS-TOKEN AccessToken", req.getAuthorization());
-                String json = HttpUtil.post(Dict.UMS_POSLINK_API_POST_DEV_GATEWAY + "transaction/voidpayment", header, Json.toJson(req, JsonFormat.compact()));
+                String json = HttpUtil.post(Dict.UMS_POSLINK_API_POST_GATEWAY + "transaction/voidpayment", header, Json.toJson(req, JsonFormat.compact()));
                 if (json.indexOf("errCode") > 0) {
                     return Json.fromJson(RefundResp.class, json);
                 } else {
@@ -238,7 +238,7 @@ public class PoslinkApi {
             } else {
                 Header header = Header.create();
                 header.set("OPEN-ACCESS-TOKEN AccessToken", req.getAuthorization());
-                String json = HttpUtil.post(Dict.UMS_POSLINK_API_POST_DEV_GATEWAY + "transaction/query", header, Json.toJson(req, JsonFormat.compact()));
+                String json = HttpUtil.post(Dict.UMS_POSLINK_API_POST_GATEWAY + "transaction/query", header, Json.toJson(req, JsonFormat.compact()));
                 if (json.indexOf("errCode") > 0) {
                     return Json.fromJson(QueryResp.class, json);
                 } else {
@@ -271,7 +271,7 @@ public class PoslinkApi {
             } else {
                 Header header = Header.create();
                 header.set("OPEN-ACCESS-TOKEN AccessToken", req.getAuthorization());
-                String json = HttpUtil.post(Dict.UMS_POSLINK_API_POST_DEV_GATEWAY + "transaction/query-refund", header, Json.toJson(req, JsonFormat.compact()));
+                String json = HttpUtil.post(Dict.UMS_POSLINK_API_POST_GATEWAY + "transaction/query-refund", header, Json.toJson(req, JsonFormat.compact()));
                 if (json.indexOf("errCode") > 0) {
                     return Json.fromJson(QueryRefundResp.class, json);
                 } else {
