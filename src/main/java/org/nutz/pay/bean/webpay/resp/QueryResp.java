@@ -352,4 +352,17 @@ public class QueryResp extends BaseResp {
     public void setSubBuyerId(String subBuyerId) {
         this.subBuyerId = subBuyerId;
     }
+
+    /**
+     * 微信活动ID
+     */
+    private String activityIds;
+
+    public String getActivityIds() {
+        return activityIds;
+    }
+
+    public void setActivityIds(String activityIds) {
+        this.activityIds = activityIds;
+    }
 }

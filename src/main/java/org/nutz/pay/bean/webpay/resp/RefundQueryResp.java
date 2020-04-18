@@ -1,23 +1,25 @@
 package org.nutz.pay.bean.webpay.resp;
 
+import java.util.Date;
+
 /**
- * Created by Jianghao on 2019/1/9
+ * Copyright 2018 Freshplay Co ltd
  *
- * @@author Freshplay Inc.
+ * @author howechiang
  */
-public class RefundResp extends BaseResp {
+public class RefundQueryResp extends BaseResp {
 
     /**
-     * 商户名称
+     * 退款状态
      */
-    private String merName;
+    private String refundStatus;
 
-    public String getMerName() {
-        return merName;
+    public String getRefundStatus() {
+        return refundStatus;
     }
 
-    public void setMerName(String merName) {
-        this.merName = merName;
+    public void setRefundStatus(String refundStatus) {
+        this.refundStatus = refundStatus;
     }
 
     /**
@@ -34,13 +36,20 @@ public class RefundResp extends BaseResp {
     }
 
     /**
-     * 订单状态
-     * NEW_ORDER 	新订单
-     * UNKNOWN 	不明确的交易状态
-     * TRADE_CLOSED 	在指定时间段内未支付时关闭的交易；在交易完成全额退款成功时关闭的交易；支付失败的交易。	TRADE_CLOSED的交易不允许进行任何操作。
-     * WAIT_BUYER_PAY 	交易创建，等待买家付款。
-     * TRADE_SUCCESS	支付成功
-     * TRADE_REFUND	订单转入退货流程	退货可能是部分也可能是全部。
+     * 清分ID，如果来源方传了bankRefId就等于bankRefId，否则等于seqId
+     */
+    private String settleRefId;
+
+    public String getSettleRefId() {
+        return settleRefId;
+    }
+
+    public void setSettleRefId(String settleRefId) {
+        this.settleRefId = settleRefId;
+    }
+
+    /**
+     * 交易状态
      */
     private String status;
 
@@ -50,6 +59,32 @@ public class RefundResp extends BaseResp {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    /**
+     * 银行卡号，如果有的话
+     */
+    private String bankCardNo;
+
+    public String getBankCardNo() {
+        return bankCardNo;
+    }
+
+    public void setBankCardNo(String bankCardNo) {
+        this.bankCardNo = bankCardNo;
+    }
+
+    /**
+     * 银行信息
+     */
+    private String bankInfo;
+
+    public String getBankInfo() {
+        return bankInfo;
+    }
+
+    public void setBankInfo(String bankInfo) {
+        this.bankInfo = bankInfo;
     }
 
     /**
@@ -117,6 +152,58 @@ public class RefundResp extends BaseResp {
 
     public void setTargetSys(String targetSys) {
         this.targetSys = targetSys;
+    }
+
+    /**
+     * 商户名称
+     */
+    private String merName;
+
+    public String getMerName() {
+        return merName;
+    }
+
+    public void setMerName(String merName) {
+        this.merName = merName;
+    }
+
+    /**
+     * 支付时间，格式yyyy-MM-dd HH:mm:ss
+     */
+    private String payTime;
+
+    public String getPayTime() {
+        return payTime;
+    }
+
+    public void setPayTime(String payTime) {
+        this.payTime = payTime;
+    }
+
+    /**
+     * 结算日期，格式yyyy-MM-dd
+     */
+    private String settleDate;
+
+    public String getSettleDate() {
+        return settleDate;
+    }
+
+    public void setSettleDate(String settleDate) {
+        this.settleDate = settleDate;
+    }
+
+    /**
+     * 商户实退金额
+     */
+    private Integer sendBackAmount;
+
+    public Integer getSendBackAmount() {
+        return sendBackAmount;
+    }
+
+    public void setSendBackAmount(Integer sendBackAmount) {
+        this.sendBackAmount = sendBackAmount;
     }
 
     /**

@@ -309,5 +309,19 @@ public class CreateReq extends BaseReq {
     public void setSecureTransaction(boolean secureTransaction) {
         this.secureTransaction = secureTransaction;
     }
+
+    /**
+     * 订单过期时间，为空则使用系统默认过期时间（30分钟），格式yyyy-MM-dd HH:mm:ss
+     * qmf.webPay :无卡 暂不支持上送expireTime
+     */
+    private String expireTime;
+
+    public String getExpireTime() {
+        return expireTime;
+    }
+
+    public void setExpireTime(String expireTime) {
+        this.expireTime = expireTime;
+    }
 }
 

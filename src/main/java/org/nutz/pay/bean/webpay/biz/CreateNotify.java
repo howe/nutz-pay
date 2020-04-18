@@ -405,6 +405,9 @@ public class CreateNotify {
         this.notifyId = notifyId;
     }
 
+    /**
+     * 商户所属分支机构代码
+     */
     private String subInst;
 
     public String getSubInst() {
@@ -413,5 +416,44 @@ public class CreateNotify {
 
     public void setSubInst(String subInst) {
         this.subInst = subInst;
+    }
+
+    /**
+     * 商户出资优惠金额
+     */
+    private Integer couponMerchantContribute;
+
+    public Integer getCouponMerchantContribute() {
+        return couponMerchantContribute;
+    }
+
+    public void setCouponMerchantContribute(Integer couponMerchantContribute) {
+        this.couponMerchantContribute = couponMerchantContribute;
+    }
+
+    /**
+     * 其他出资优惠金额
+     */
+    private Integer couponOtherContribute;
+
+    public Integer getCouponOtherContribute() {
+        return couponOtherContribute;
+    }
+
+    public void setCouponOtherContribute(Integer couponOtherContribute) {
+        this.couponOtherContribute = couponOtherContribute;
+    }
+
+    /**
+     * 微信活动ID
+     */
+    private String activityIds;
+
+    public String getActivityIds() {
+        return activityIds;
+    }
+
+    public void setActivityIds(String activityIds) {
+        this.activityIds = activityIds;
     }
 }

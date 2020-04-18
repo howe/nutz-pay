@@ -5,7 +5,7 @@ import org.nutz.json.Json;
 import org.nutz.json.JsonFormat;
 import org.nutz.lang.Lang;
 import org.nutz.lang.Strings;
-import org.nutz.pay.bean.biz.Dict;
+import org.nutz.pay.bean.biz.Comm;
 import org.nutz.pay.bean.webpay.req.*;
 import org.nutz.pay.bean.webpay.resp.*;
 import org.nutz.pay.util.HttpUtil;
@@ -53,7 +53,7 @@ public class WebpayApi {
         } else if (Strings.isBlank(req.getSubOpenId())) {
             throw new NullPointerException("subOpenId为空");
         } else {
-            return Dict.UMS_WEBPAY_API_GET_GATEWAY + "?" + Util.buildParmas(Lang.obj2map(req));
+            return Comm.UMS_WEBPAY_API_GET_GATEWAY + "?" + Util.buildParmas(Lang.obj2map(req));
         }
     }
 
@@ -83,7 +83,7 @@ public class WebpayApi {
         } else if (Strings.isBlank(req.getSign())) {
             throw new NullPointerException("sign为空");
         } else {
-            String json = HttpUtil.post(Dict.UMS_WEBPAY_API_POST_GATEWAY, Json.toJson(req, JsonFormat.compact()));
+            String json = HttpUtil.post(Comm.UMS_WEBPAY_API_POST_GATEWAY, Json.toJson(req, JsonFormat.compact()));
             if (json.indexOf("errCode") > 0) {
                 return Json.fromJson(QueryResp.class, json);
             } else {
@@ -118,7 +118,7 @@ public class WebpayApi {
         } else if (Strings.isBlank(req.getSign())) {
             throw new NullPointerException("sign为空");
         } else {
-            String json = HttpUtil.post(Dict.UMS_WEBPAY_API_POST_GATEWAY, Json.toJson(req, JsonFormat.compact()));
+            String json = HttpUtil.post(Comm.UMS_WEBPAY_API_POST_GATEWAY, Json.toJson(req, JsonFormat.compact()));
             if (json.indexOf("errCode") > 0) {
                 return Json.fromJson(SecureCancelResp.class, json);
             } else {
@@ -155,7 +155,7 @@ public class WebpayApi {
         } else if (Strings.isBlank(req.getSign())) {
             throw new NullPointerException("sign为空");
         } else {
-            String json = HttpUtil.post(Dict.UMS_WEBPAY_API_POST_GATEWAY, Json.toJson(req, JsonFormat.compact()));
+            String json = HttpUtil.post(Comm.UMS_WEBPAY_API_POST_GATEWAY, Json.toJson(req, JsonFormat.compact()));
             if (json.indexOf("errCode") > 0) {
                 return Json.fromJson(SecureCompleteResp.class, json);
             } else {
@@ -192,7 +192,7 @@ public class WebpayApi {
         } else if (Strings.isBlank(req.getSign())) {
             throw new NullPointerException("sign为空");
         } else {
-            String json = HttpUtil.post(Dict.UMS_WEBPAY_API_POST_GATEWAY, Json.toJson(req, JsonFormat.compact()));
+            String json = HttpUtil.post(Comm.UMS_WEBPAY_API_POST_GATEWAY, Json.toJson(req, JsonFormat.compact()));
             if (json.indexOf("errCode") > 0) {
                 return Json.fromJson(RefundResp.class, json);
             } else {
@@ -227,9 +227,44 @@ public class WebpayApi {
         } else if (Strings.isBlank(req.getSign())) {
             throw new NullPointerException("sign为空");
         } else {
-            String json = HttpUtil.post(Dict.UMS_WEBPAY_API_POST_GATEWAY, Json.toJson(req, JsonFormat.compact()));
+            String json = HttpUtil.post(Comm.UMS_WEBPAY_API_POST_GATEWAY, Json.toJson(req, JsonFormat.compact()));
             if (json.indexOf("errCode") > 0) {
                 return Json.fromJson(CloseResp.class, json);
+            } else {
+                throw new RuntimeException(json);
+            }
+        }
+    }
+
+    /**
+     * 退货查询接口
+     *
+     * @param req
+     * @return
+     */
+    public static RefundQueryResp refundQuery(RefundQueryReq req) {
+        if (Strings.isBlank(req.getMsgSrc())) {
+            throw new NullPointerException("msgSrc为空");
+        } else if (Strings.isBlank(req.getRequestTimestamp())) {
+            throw new NullPointerException("requestTimestamp为空");
+        } else if (!Strings.equalsIgnoreCase(req.getMsgType(), "close")) {
+            throw new NullPointerException("msgType错误");
+        } else if (Strings.isBlank(req.getMerOrderId())) {
+            throw new NullPointerException("merOrderId为空");
+        } else if (Strings.isBlank(req.getMid())) {
+            throw new NullPointerException("mid为空");
+        } else if (Strings.isBlank(req.getTid())) {
+            throw new NullPointerException("tid为空");
+        } else if (Strings.isBlank(req.getInstMid())) {
+            throw new NullPointerException("instMid为空");
+        } else if (Strings.isBlank(req.getSignType())) {
+            throw new NullPointerException("signType为空");
+        } else if (Strings.isBlank(req.getSign())) {
+            throw new NullPointerException("sign为空");
+        } else {
+            String json = HttpUtil.post(Comm.UMS_WEBPAY_API_POST_GATEWAY, Json.toJson(req, JsonFormat.compact()));
+            if (json.indexOf("errCode") > 0) {
+                return Json.fromJson(RefundQueryResp.class, json);
             } else {
                 throw new RuntimeException(json);
             }
@@ -274,7 +309,7 @@ public class WebpayApi {
                         .setImageFormat("jpg")
                         .setMargin(1)
                         .setIcon(Images.read(WebpayApi.class.getClassLoader().getResourceAsStream(req.getIconName())));
-                BufferedImage image = QRCode.toQRCode(Dict.UMS_WEBPAY_API_GET_GATEWAY + "?" + Util.buildParmas(Lang.obj2map(req)), format);
+                BufferedImage image = QRCode.toQRCode(Comm.UMS_WEBPAY_API_GET_GATEWAY + "?" + Util.buildParmas(Lang.obj2map(req)), format);
                 ByteArrayOutputStream bos = new ByteArrayOutputStream();
                 ImageIO.write(image, "jpg", bos);
                 byte[] imageBytes = bos.toByteArray();

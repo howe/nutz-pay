@@ -47,11 +47,12 @@ public class BaseReq implements Serializable {
      * 创建订单时：qmf.webPay :无卡
      * 创建订单时：acp.jsPay :银联云闪付
      * ---------------------------------------
-     * 订单查询时：query
-     * 担保撤销时：secureCancel
-     * 担保完成时：secureComplete
-     * 订单退款时：refund
-     * 订单关闭时：close
+     * 订单查询时：  query
+     * 担保撤销时：  secureCancel
+     * 担保完成时：  secureComplete
+     * 订单退款时：  refund
+     * 退货查询接口：refundQuery
+     * 订单关闭时：  close
      * 必填
      */
     private String msgType;
