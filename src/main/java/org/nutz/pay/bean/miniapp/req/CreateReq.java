@@ -16,10 +16,6 @@ import java.util.List;
 public class CreateReq extends BaseReq {
 
     /**
-     * 分账标记
-     * 选填
-     * 暂时只支持微信（WXPay.jsPay）、支付宝
-     * （trade.jsPay）支付 和 银联云闪付（acp.jsPay）。
      * 若为true，则goods字段和subOrders字段不能同时为空；且secureTransaction字段上送false或不上送。
      */
     private boolean divisionFlag;
@@ -213,20 +209,6 @@ public class CreateReq extends BaseReq {
 
     public void setShowUrl(String showUrl) {
         this.showUrl = showUrl;
-    }
-
-    /**
-     * 系统ID
-     * 选填
-     */
-    private String systemId;
-
-    public String getSystemId() {
-        return systemId;
-    }
-
-    public void setSystemId(String systemId) {
-        this.systemId = systemId;
     }
 
     /**
