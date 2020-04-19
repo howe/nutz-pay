@@ -60,6 +60,11 @@ public class Comm {
     public static String MSGTYPE_WX_UNIFIEDORDER = "wx.unifiedOrder";
 
     /**
+     * 支付宝小程序支付
+     */
+    public static String MSGTYPE_TRADE_CREATE = "trade.create";
+
+    /**
      * MD5加密
      */
     public static String SIGNTYPE_MD5 = "MD5";

@@ -262,4 +262,37 @@ public class Util {
             }
         }
     }
+
+    /**
+     * 比对数组
+     *
+     * @param obj
+     * @param objs
+     * @return
+     */
+    public static boolean equals(String obj, String... objs) {
+        if (Strings.isBlank(obj) || Lang.isEmpty(objs)) {
+            return false;
+        } else {
+            for (String s : Arrays.asList(objs)) {
+                if (Strings.equalsIgnoreCase(obj, s)) {
+                    return true;
+                }
+            }
+            return false;
+        }
+    }
+
+    public static boolean isAllBlank(String... sts) {
+        if (Lang.isEmpty(sts)) {
+            return true;
+        } else {
+            for (String s : Arrays.asList(sts)) {
+                if (Strings.isNotBlank(s)) {
+                    return false;
+                }
+            }
+            return true;
+        }
+    }
 }

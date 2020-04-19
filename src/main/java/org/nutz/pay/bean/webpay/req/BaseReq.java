@@ -46,6 +46,8 @@ public class BaseReq implements Serializable {
      * 创建订单时：qmf.jspay :全民付
      * 创建订单时：qmf.webPay :无卡
      * 创建订单时：acp.jsPay :银联云闪付
+     * 微信小程序: wx.unifiedOrder
+     * 支付宝小程序: trade.create
      * ---------------------------------------
      * 订单查询时：  query
      * 担保撤销时：  secureCancel

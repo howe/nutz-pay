@@ -8,6 +8,7 @@ import org.nutz.pay.bean.bills.req.*;
 import org.nutz.pay.bean.bills.resp.*;
 import org.nutz.pay.bean.biz.Comm;
 import org.nutz.pay.util.HttpUtil;
+import org.nutz.qrcode.QRCode;
 
 /**
  * Copyright 2018 Freshplay Co ltd
@@ -46,6 +47,43 @@ public class BillsApi {
             String json = HttpUtil.post(Comm.UMS_WEBPAY_API_POST_GATEWAY, Json.toJson(req, JsonFormat.compact()));
             if (json.indexOf("errCode") > 0) {
                 return Json.fromJson(GetQRCodeResp.class, json);
+            } else {
+                throw new RuntimeException(json);
+            }
+        }
+    }
+
+    /**
+     * 利用二维码接口取支付跳转地址
+     *
+     * @param req
+     * @return
+     */
+    public static CreateResp create(CreateReq req) {
+        if (Strings.isBlank(req.getMsgSrc())) {
+            throw new NullPointerException("msgSrc为空");
+        } else if (Strings.isBlank(req.getRequestTimestamp())) {
+            throw new NullPointerException("requestTimestamp为空");
+        } else if (Strings.isBlank(req.getMid())) {
+            throw new NullPointerException("mid为空");
+        } else if (Strings.isBlank(req.getTid())) {
+            throw new NullPointerException("tid为空");
+        } else if (Strings.isBlank(req.getInstMid())) {
+            throw new NullPointerException("instMid为空");
+        } else if (!Strings.equalsIgnoreCase(req.getMsgType(), "bills.getQRCode")) {
+            throw new NullPointerException("msgType错误");
+        } else if (Strings.isBlank(req.getSignType())) {
+            throw new NullPointerException("signType为空");
+        } else if (Lang.isEmpty(req.getTotalAmount())) {
+            throw new NullPointerException("totalAmount为空");
+        } else if (Strings.isBlank(req.getSign())) {
+            throw new NullPointerException("sign为空");
+        } else {
+            String json = HttpUtil.post(Comm.UMS_WEBPAY_API_POST_GATEWAY, Json.toJson(req, JsonFormat.compact()));
+            if (json.indexOf("errCode") > 0) {
+                CreateResp resp = Json.fromJson(CreateResp.class, json);
+                resp.setBillQRCodeUrl(QRCode.from(resp.getBillQRCode()));
+                return resp;
             } else {
                 throw new RuntimeException(json);
             }

@@ -27,3 +27,5 @@ hs_err_pid*
 \.idea/
 
 nutz-pay\.iml
+/target/
+/src/test/

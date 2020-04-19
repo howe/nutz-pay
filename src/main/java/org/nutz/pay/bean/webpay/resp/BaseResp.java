@@ -163,7 +163,9 @@ public class BaseResp implements Serializable {
         this.merOrderId = merOrderId;
     }
 
-
+    /**
+     * 链接系统
+     */
     private String connectSys;
 
     public String getConnectSys() {
@@ -172,6 +174,19 @@ public class BaseResp implements Serializable {
 
     public void setConnectSys(String connectSys) {
         this.connectSys = connectSys;
+    }
+
+    /**
+     * 签名算法
+     */
+    private String signType;
+
+    public String getSignType() {
+        return signType;
+    }
+
+    public void setSignType(String signType) {
+        this.signType = signType;
     }
 
     /**
