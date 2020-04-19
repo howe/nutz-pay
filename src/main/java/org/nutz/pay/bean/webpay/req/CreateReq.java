@@ -31,6 +31,19 @@ public class CreateReq extends BaseReq {
     }
 
     /**
+     * 微信子商户appId
+     */
+    private String subAppId;
+
+    public String getSubAppId() {
+        return subAppId;
+    }
+
+    public void setSubAppId(String subAppId) {
+        this.subAppId = subAppId;
+    }
+
+    /**
      * 平台商户分账金额
      * 若分账标记传，则分账金额必传
      * 选填
