@@ -1,4 +1,4 @@
-package org.nutz.pay.bean.miniapp.resp;
+package org.nutz.pay.bean.minipay.resp;
 
 import org.nutz.lang.util.NutMap;
 import org.nutz.pay.bean.webpay.resp.BaseResp;

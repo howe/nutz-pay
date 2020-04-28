@@ -62,7 +62,7 @@ public class CreateQRReq extends BaseReq {
      */
     private Boolean divisionFlag;
 
-    public Boolean isDivisionFlag() {
+    public Boolean getDivisionFlag() {
         return divisionFlag;
     }
 
@@ -323,7 +323,7 @@ public class CreateQRReq extends BaseReq {
      */
     private Boolean limitCreditCard;
 
-    public Boolean isLimitCreditCard() {
+    public Boolean getLimitCreditCard() {
         return limitCreditCard;
     }
 
@@ -342,7 +342,7 @@ public class CreateQRReq extends BaseReq {
      */
     private Boolean secureTransaction;
 
-    public Boolean isSecureTransaction() {
+    public Boolean getSecureTransaction() {
         return secureTransaction;
     }
 
@@ -390,6 +390,10 @@ public class CreateQRReq extends BaseReq {
 
     public void setAsynDivisionFlag(Boolean asynDivisionFlag) {
         this.asynDivisionFlag = asynDivisionFlag;
+    }
+
+    public CreateQRReq() {
+        this.setInstMid("YUEDANDEFAULT");
     }
 }
 

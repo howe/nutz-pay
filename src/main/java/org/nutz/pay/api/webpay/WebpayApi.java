@@ -50,7 +50,7 @@ public class WebpayApi {
             throw new NullPointerException("sign为空");
         } else if (Lang.isEmpty(req.getTotalAmount())) {
             throw new NullPointerException("totalAmount为空");
-        } else if (Strings.isBlank(req.getSubOpenId())) {
+        } else if (Strings.equalsIgnoreCase(req.getMsgType(), Comm.MSGTYPE_WXPAY_JSPAY) && Strings.isBlank(req.getSubAppId()) && Strings.isBlank(req.getSubOpenId())) {
             throw new NullPointerException("subOpenId为空");
         } else {
             return Comm.UMS_WEBPAY_API_GET_GATEWAY + "?" + Util.buildParmas(Lang.obj2map(req));
@@ -297,7 +297,7 @@ public class WebpayApi {
                 throw new NullPointerException("sign为空");
             } else if (Lang.isEmpty(req.getTotalAmount())) {
                 throw new NullPointerException("totalAmount为空");
-            } else if (Strings.isBlank(req.getSubOpenId())) {
+            } else if (Strings.equalsIgnoreCase(req.getMsgType(), Comm.MSGTYPE_WXPAY_JSPAY) && Strings.isBlank(req.getSubAppId()) && Strings.isBlank(req.getSubOpenId())) {
                 throw new NullPointerException("subOpenId为空");
             } else {
                 QRCodeFormat format = QRCodeFormat.NEW();

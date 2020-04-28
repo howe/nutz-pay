@@ -24,5 +24,6 @@ public class SecureCompleteReq extends BaseReq {
 
     public SecureCompleteReq() {
         this.setMsgType("secureComplete");
+        this.setInstMid("YUEDANDEFAULT");
     }
 }

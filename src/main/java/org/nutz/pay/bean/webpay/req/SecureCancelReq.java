@@ -10,5 +10,6 @@ public class SecureCancelReq extends BaseReq {
 
     public SecureCancelReq() {
         this.setMsgType("secureCancel");
+        this.setInstMid("YUEDANDEFAULT");
     }
 }

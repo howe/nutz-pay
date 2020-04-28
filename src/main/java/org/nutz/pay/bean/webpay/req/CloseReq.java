@@ -10,5 +10,6 @@ public class CloseReq extends BaseReq {
 
     public CloseReq() {
         this.setMsgType("close");
+        this.setInstMid("YUEDANDEFAULT");
     }
 }

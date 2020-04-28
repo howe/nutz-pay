@@ -11,6 +11,7 @@ public class RefundQueryReq extends BaseReq {
 
     public RefundQueryReq() {
         this.setMsgType("refundQuery");
+        this.setInstMid("YUEDANDEFAULT");
     }
 
     /**

@@ -1,12 +1,12 @@
-package org.nutz.pay.api.miniapp;
+package org.nutz.pay.api.minipay;
 
 import org.nutz.json.Json;
 import org.nutz.json.JsonFormat;
 import org.nutz.lang.Lang;
 import org.nutz.lang.Strings;
 import org.nutz.pay.bean.biz.Comm;
-import org.nutz.pay.bean.miniapp.req.CreateReq;
-import org.nutz.pay.bean.miniapp.resp.CreateResp;
+import org.nutz.pay.bean.minipay.req.CreateReq;
+import org.nutz.pay.bean.minipay.resp.CreateResp;
 import org.nutz.pay.util.HttpUtil;
 import org.nutz.pay.util.Util;
 
@@ -16,7 +16,7 @@ import org.nutz.pay.util.Util;
  *
  * @author howechiang
  */
-public class MiniappApi {
+public class MinipayApi {
 
     public static CreateResp create(CreateReq req) {
         if (Strings.isBlank(req.getMsgSrc())) {

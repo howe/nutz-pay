@@ -146,7 +146,7 @@ public class BaseReq implements Serializable {
      * YUEDANDEFAULT
      * 必填
      */
-    private String instMid = "YUEDANDEFAULT";
+    private String instMid;
 
     public String getInstMid() {
         return instMid;

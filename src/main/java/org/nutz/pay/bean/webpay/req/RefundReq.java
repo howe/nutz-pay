@@ -89,5 +89,6 @@ public class RefundReq extends BaseReq {
 
     public RefundReq() {
         this.setMsgType("refund");
+        this.setInstMid("YUEDANDEFAULT");
     }
 }

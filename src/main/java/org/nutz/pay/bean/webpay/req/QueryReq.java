@@ -9,6 +9,7 @@ package org.nutz.pay.bean.webpay.req;
 public class QueryReq extends BaseReq {
 
     public QueryReq() {
+        this.setInstMid("YUEDANDEFAULT");
         this.setMsgType("query");
     }
 }
