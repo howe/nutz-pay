@@ -29,13 +29,13 @@ public class SecureCancelResp extends BaseResp {
     /**
      * 担保完成金额
      */
-    private Integer completedAmount;
+    private Long completedAmount;
 
-    public Integer getCompletedAmount() {
+    public Long getCompletedAmount() {
         return completedAmount;
     }
 
-    public void setCompletedAmount(Integer completedAmount) {
+    public void setCompletedAmount(Long completedAmount) {
         this.completedAmount = completedAmount;
     }
 }

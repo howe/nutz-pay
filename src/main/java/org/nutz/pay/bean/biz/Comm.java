@@ -33,6 +33,8 @@ public class Comm {
     public static final String POSLINK_TRANSACTIONCURRENCYCODE_CODE_SCAN = "CODE_SCAN";
     public static final String POSLINK_TRANSACTIONCURRENCYCODE_MANUAL = "MANUAL";
 
+    public static final String PARAM_SIGN_NAME = "sign";
+
     /**
      * 微信公众号支付
      */

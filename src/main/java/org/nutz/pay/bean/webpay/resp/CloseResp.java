@@ -155,13 +155,13 @@ public class CloseResp extends BaseResp {
     /**
      * 支付总金额
      */
-    private Integer totalAmount;
+    private Long totalAmount;
 
-    public Integer getTotalAmount() {
+    public Long getTotalAmount() {
         return totalAmount;
     }
 
-    public void setTotalAmount(Integer totalAmount) {
+    public void setTotalAmount(Long totalAmount) {
         this.totalAmount = totalAmount;
     }
 }

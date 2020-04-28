@@ -1,5 +1,7 @@
 package org.nutz.pay.bean.webpay.resp;
 
+import org.nutz.json.JsonField;
+
 /**
  * Created by Jianghao on 2019/1/9
  *
@@ -94,13 +96,13 @@ public class QueryResp extends BaseResp {
     /**
      * 支付总金额
      */
-    private Integer totalAmount;
+    private Long totalAmount;
 
-    public Integer getTotalAmount() {
+    public Long getTotalAmount() {
         return totalAmount;
     }
 
-    public void setTotalAmount(Integer totalAmount) {
+    public void setTotalAmount(Long totalAmount) {
         this.totalAmount = totalAmount;
     }
 
@@ -252,13 +254,13 @@ public class QueryResp extends BaseResp {
     /**
      * 买家付款的金额，支付宝会有
      */
-    private int buyerPayAmount;
+    private Long buyerPayAmount;
 
-    public int getBuyerPayAmount() {
+    public Long getBuyerPayAmount() {
         return buyerPayAmount;
     }
 
-    public void setBuyerPayAmount(int buyerPayAmount) {
+    public void setBuyerPayAmount(Long buyerPayAmount) {
         this.buyerPayAmount = buyerPayAmount;
     }
 
@@ -278,32 +280,33 @@ public class QueryResp extends BaseResp {
     /**
      * 网付计算的优惠金额
      */
-    private int couponAmount;
+    private Long couponAmount;
 
-    public int getCouponAmount() {
+    public Long getCouponAmount() {
         return couponAmount;
     }
 
-    public void setCouponAmount(int couponAmount) {
+    public void setCouponAmount(Long couponAmount) {
         this.couponAmount = couponAmount;
     }
 
     /**
      * 交易中可给用户开具发票的金额
      */
-    private int invoiceAmount;
+    private Long invoiceAmount;
 
-    public int getInvoiceAmount() {
+    public Long getInvoiceAmount() {
         return invoiceAmount;
     }
 
-    public void setInvoiceAmount(int invoiceAmount) {
+    public void setInvoiceAmount(Long invoiceAmount) {
         this.invoiceAmount = invoiceAmount;
     }
 
     /**
      * 支付时间，格式yyyy-MM-dd HH:mm:ss
      */
+    @JsonField(dataFormat = "yyyy-MM-dd HH:mm:ss")
     private String payTime;
 
     public String getPayTime() {
@@ -317,13 +320,13 @@ public class QueryResp extends BaseResp {
     /**
      * 实收金额
      */
-    private Integer receiptAmount;
+    private Long receiptAmount;
 
-    public Integer getReceiptAmount() {
+    public Long getReceiptAmount() {
         return receiptAmount;
     }
 
-    public void setReceiptAmount(Integer receiptAmount) {
+    public void setReceiptAmount(Long receiptAmount) {
         this.receiptAmount = receiptAmount;
     }
 
@@ -364,5 +367,18 @@ public class QueryResp extends BaseResp {
 
     public void setActivityIds(String activityIds) {
         this.activityIds = activityIds;
+    }
+
+    /**
+     * 营销联盟优惠金额
+     */
+    private Long yxlmAmount;
+
+    public Long getYxlmAmount() {
+        return yxlmAmount;
+    }
+
+    public void setYxlmAmount(Long yxlmAmount) {
+        this.yxlmAmount = yxlmAmount;
     }
 }

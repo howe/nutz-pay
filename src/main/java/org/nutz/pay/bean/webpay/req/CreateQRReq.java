@@ -2,6 +2,7 @@ package org.nutz.pay.bean.webpay.req;
 
 import org.nutz.pay.bean.biz.Good;
 import org.nutz.pay.bean.biz.SubOrder;
+import org.nutz.pay.util.Util;
 
 import java.util.List;
 
@@ -40,19 +41,32 @@ public class CreateQRReq extends BaseReq {
     }
 
     /**
+     * 微信子商户appId
+     */
+    private String subAppId;
+
+    public String getSubAppId() {
+        return subAppId;
+    }
+
+    public void setSubAppId(String subAppId) {
+        this.subAppId = subAppId;
+    }
+
+    /**
      * 分账标记
      * 选填
      * 暂时只支持微信（WXPay.jsPay）、支付宝
      * （trade.jsPay）支付 和 银联云闪付（acp.jsPay）。
      * 若为true，则goods字段和subOrders字段不能同时为空；且secureTransaction字段上送false或不上送。
      */
-    private boolean divisionFlag;
+    private Boolean divisionFlag;
 
-    public boolean isDivisionFlag() {
+    public Boolean isDivisionFlag() {
         return divisionFlag;
     }
 
-    public void setDivisionFlag(boolean divisionFlag) {
+    public void setDivisionFlag(Boolean divisionFlag) {
         this.divisionFlag = divisionFlag;
     }
 
@@ -61,13 +75,13 @@ public class CreateQRReq extends BaseReq {
      * 若分账标记传，则分账金额必传
      * 选填
      */
-    private Integer platformAmount;
+    private Long platformAmount;
 
-    public Integer getPlatformAmount() {
+    public Long getPlatformAmount() {
         return platformAmount;
     }
 
-    public void setPlatformAmount(Integer platformAmount) {
+    public void setPlatformAmount(Long platformAmount) {
         this.platformAmount = platformAmount;
     }
 
@@ -145,13 +159,13 @@ public class CreateQRReq extends BaseReq {
      * 订单原始金额，单位分，用于记录前端系统打折前的金额
      * 选填
      */
-    private Integer originalAmount;
+    private Long originalAmount;
 
-    public Integer getOriginalAmount() {
+    public Long getOriginalAmount() {
         return originalAmount;
     }
 
-    public void setOriginalAmount(Integer originalAmount) {
+    public void setOriginalAmount(Long originalAmount) {
         this.originalAmount = originalAmount;
     }
 
@@ -161,13 +175,13 @@ public class CreateQRReq extends BaseReq {
      * 单位分
      * 若divisionFlag为true，则：totalAmount = subOrders字段中的所有totalAmount值之和加上 platformAmount值 = goods中的所有subOrderAmount值之和。
      */
-    private Integer totalAmount;
+    private Long totalAmount;
 
-    public Integer getTotalAmount() {
+    public Long getTotalAmount() {
         return totalAmount;
     }
 
-    public void setTotalAmount(Integer totalAmount) {
+    public void setTotalAmount(Long totalAmount) {
         this.totalAmount = totalAmount;
     }
 
@@ -239,7 +253,7 @@ public class CreateQRReq extends BaseReq {
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.name = Util.Base64.encode(name);
     }
 
     /**
@@ -254,7 +268,7 @@ public class CreateQRReq extends BaseReq {
     }
 
     public void setMobile(String mobile) {
-        this.mobile = mobile;
+        this.mobile = Util.Base64.encode(mobile);
     }
 
     /**
@@ -284,7 +298,7 @@ public class CreateQRReq extends BaseReq {
     }
 
     public void setCertNo(String certNo) {
-        this.certNo = certNo;
+        this.certNo = Util.Base64.encode(certNo);
     }
 
     /**
@@ -307,13 +321,13 @@ public class CreateQRReq extends BaseReq {
      * 选填
      * 取值：true或false，默认false
      */
-    private boolean limitCreditCard;
+    private Boolean limitCreditCard;
 
-    public boolean isLimitCreditCard() {
+    public Boolean isLimitCreditCard() {
         return limitCreditCard;
     }
 
-    public void setLimitCreditCard(boolean limitCreditCard) {
+    public void setLimitCreditCard(Boolean limitCreditCard) {
         this.limitCreditCard = limitCreditCard;
     }
 
@@ -326,14 +340,56 @@ public class CreateQRReq extends BaseReq {
      * 调用担保撤销接口，则全部资金退还给用户。
      * 30天后 没有主动调用担保完成 且 没有主动调用担保撤销的交易 将会自动按撤销处理。
      */
-    private boolean secureTransaction;
+    private Boolean secureTransaction;
 
-    public boolean isSecureTransaction() {
+    public Boolean isSecureTransaction() {
         return secureTransaction;
     }
 
-    public void setSecureTransaction(boolean secureTransaction) {
+    public void setSecureTransaction(Boolean secureTransaction) {
         this.secureTransaction = secureTransaction;
+    }
+
+    /**
+     * 订单过期时间，为空则使用系统默认过期时间（30分钟），格式yyyy-MM-dd HH:mm:ss
+     * qmf.webPay :无卡 暂不支持上送expireTime
+     */
+    private String expireTime;
+
+    public String getExpireTime() {
+        return expireTime;
+    }
+
+    public void setExpireTime(String expireTime) {
+        this.expireTime = expireTime;
+    }
+
+    /**
+     * 花呗分期数
+     * 仅支持3、6、12
+     * 仅支持支付宝支付
+     */
+    private Integer installmentNumber;
+
+    public Integer getInstallmentNumber() {
+        return installmentNumber;
+    }
+
+    public void setInstallmentNumber(Integer installmentNumber) {
+        this.installmentNumber = installmentNumber;
+    }
+
+    /**
+     * 异步分账标记
+     */
+    private Boolean asynDivisionFlag;
+
+    public Boolean getAsynDivisionFlag() {
+        return asynDivisionFlag;
+    }
+
+    public void setAsynDivisionFlag(Boolean asynDivisionFlag) {
+        this.asynDivisionFlag = asynDivisionFlag;
     }
 }
 

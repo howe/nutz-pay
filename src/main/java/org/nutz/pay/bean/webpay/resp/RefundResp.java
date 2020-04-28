@@ -135,13 +135,13 @@ public class RefundResp extends BaseResp {
     /**
      * 总退款金额
      */
-    private Integer refundAmount;
+    private Long refundAmount;
 
-    public Integer getRefundAmount() {
+    public Long getRefundAmount() {
         return refundAmount;
     }
 
-    public void setRefundAmount(Integer refundAmount) {
+    public void setRefundAmount(Long refundAmount) {
         this.refundAmount = refundAmount;
     }
 
@@ -174,13 +174,13 @@ public class RefundResp extends BaseResp {
     /**
      * 实付部分退款金额
      */
-    private Integer refundInvoiceAmount;
+    private Long refundInvoiceAmount;
 
-    public Integer getRefundInvoiceAmount() {
+    public Long getRefundInvoiceAmount() {
         return refundInvoiceAmount;
     }
 
-    public void setRefundInvoiceAmount(Integer refundInvoiceAmount) {
+    public void setRefundInvoiceAmount(Long refundInvoiceAmount) {
         this.refundInvoiceAmount = refundInvoiceAmount;
     }
 

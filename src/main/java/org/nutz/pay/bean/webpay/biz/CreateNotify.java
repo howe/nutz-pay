@@ -1,5 +1,11 @@
 package org.nutz.pay.bean.webpay.biz;
 
+import org.nutz.json.JsonField;
+import org.nutz.mvc.annotation.Param;
+import org.nutz.pay.bean.biz.Comm;
+
+import java.util.Date;
+
 /**
  * Created by Jianghao on 2019/1/9
  *
@@ -166,78 +172,79 @@ public class CreateNotify {
     /**
      * 网付计算的优惠金额
      */
-    private int couponAmount;
+    private Long couponAmount;
 
-    public int getCouponAmount() {
+    public Long getCouponAmount() {
         return couponAmount;
     }
 
-    public void setCouponAmount(int couponAmount) {
+    public void setCouponAmount(Long couponAmount) {
         this.couponAmount = couponAmount;
     }
 
     /**
      * 实付金额
      */
-    private int buyerPayAmount;
+    private Long buyerPayAmount;
 
-    public int getBuyerPayAmount() {
+    public Long getBuyerPayAmount() {
         return buyerPayAmount;
     }
 
-    public void setBuyerPayAmount(int buyerPayAmount) {
+    public void setBuyerPayAmount(Long buyerPayAmount) {
         this.buyerPayAmount = buyerPayAmount;
     }
 
     /**
      * 订单金额，单位分
      */
-    private int totalAmount;
+    private Long totalAmount;
 
-    public int getTotalAmount() {
+    public Long getTotalAmount() {
         return totalAmount;
     }
 
-    public void setTotalAmount(int totalAmount) {
+    public void setTotalAmount(Long totalAmount) {
         this.totalAmount = totalAmount;
     }
 
     /**
      * 开票金额
      */
-    private int invoiceAmount;
+    private Long invoiceAmount;
 
-    public int getInvoiceAmount() {
+    public Long getInvoiceAmount() {
         return invoiceAmount;
     }
 
-    public void setInvoiceAmount(int invoiceAmount) {
+    public void setInvoiceAmount(Long invoiceAmount) {
         this.invoiceAmount = invoiceAmount;
     }
 
     /**
      * 支付时间，格式yyyy-MM-dd HH:mm:ss
      */
-    private String payTime;
+    @JsonField(dataFormat = Comm.DATE_FORMART_FULL)
+    private Date payTime;
 
-    public String getPayTime() {
+    public Date getPayTime() {
         return payTime;
     }
 
-    public void setPayTime(String payTime) {
+    public void setPayTime(Date payTime) {
         this.payTime = payTime;
     }
 
     /**
      * 实收金额
      */
-    private Integer receiptAmount;
+    private Long receiptAmount;
 
-    public Integer getReceiptAmount() {
+    public Long getReceiptAmount() {
         return receiptAmount;
     }
 
-    public void setReceiptAmount(Integer receiptAmount) {
+    public void setReceiptAmount(Long receiptAmount) {
         this.receiptAmount = receiptAmount;
     }
 
@@ -257,13 +264,13 @@ public class CreateNotify {
     /**
      * 退款金额
      */
-    private Integer refundAmount;
+    private Long refundAmount;
 
-    public Integer getRefundAmount() {
+    public Long getRefundAmount() {
         return refundAmount;
     }
 
-    public void setRefundAmount(Integer refundAmount) {
+    public void setRefundAmount(Long refundAmount) {
         this.refundAmount = refundAmount;
     }
 
@@ -434,13 +441,13 @@ public class CreateNotify {
     /**
      * 其他出资优惠金额
      */
-    private Integer couponOtherContribute;
+    private Long couponOtherContribute;
 
-    public Integer getCouponOtherContribute() {
+    public Long getCouponOtherContribute() {
         return couponOtherContribute;
     }
 
-    public void setCouponOtherContribute(Integer couponOtherContribute) {
+    public void setCouponOtherContribute(Long couponOtherContribute) {
         this.couponOtherContribute = couponOtherContribute;
     }
 

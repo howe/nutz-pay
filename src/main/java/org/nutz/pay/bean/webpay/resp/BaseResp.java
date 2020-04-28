@@ -1,6 +1,10 @@
 package org.nutz.pay.bean.webpay.resp;
 
+import org.nutz.json.JsonField;
+import org.nutz.pay.bean.biz.Comm;
+
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * Copyright 2018 Freshplay Co ltd
@@ -114,13 +118,14 @@ public class BaseResp implements Serializable {
     /**
      * 报文响应时间，格式yyyy-MM-dd HH:mm:ss
      */
-    private String responseTimestamp;
+    @JsonField(dataFormat = Comm.DATE_FORMART_FULL)
+    private Date responseTimestamp;
 
-    public String getResponseTimestamp() {
+    public Date getResponseTimestamp() {
         return responseTimestamp;
     }
 
-    public void setResponseTimestamp(String responseTimestamp) {
+    public void setResponseTimestamp(Date responseTimestamp) {
         this.responseTimestamp = responseTimestamp;
     }
 

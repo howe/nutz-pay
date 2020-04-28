@@ -12,13 +12,13 @@ public class SecureCompleteReq extends BaseReq {
      * 担保完成金额
      * 必填
      */
-    private Integer completedAmount;
+    private Long completedAmount;
 
-    public Integer getCompletedAmount() {
+    public Long getCompletedAmount() {
         return completedAmount;
     }
 
-    public void setCompletedAmount(Integer completedAmount) {
+    public void setCompletedAmount(Long completedAmount) {
         this.completedAmount = completedAmount;
     }
 

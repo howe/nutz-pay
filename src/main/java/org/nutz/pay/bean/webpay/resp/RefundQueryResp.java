@@ -1,5 +1,7 @@
 package org.nutz.pay.bean.webpay.resp;
 
+import org.nutz.json.JsonField;
+
 import java.util.Date;
 
 /**
@@ -170,6 +172,7 @@ public class RefundQueryResp extends BaseResp {
     /**
      * 支付时间，格式yyyy-MM-dd HH:mm:ss
      */
+    @JsonField(dataFormat = "yyyy-MM-dd HH:mm:ss")
     private String payTime;
 
     public String getPayTime() {
@@ -196,39 +199,39 @@ public class RefundQueryResp extends BaseResp {
     /**
      * 商户实退金额
      */
-    private Integer sendBackAmount;
+    private Long sendBackAmount;
 
-    public Integer getSendBackAmount() {
+    public Long getSendBackAmount() {
         return sendBackAmount;
     }
 
-    public void setSendBackAmount(Integer sendBackAmount) {
+    public void setSendBackAmount(Long sendBackAmount) {
         this.sendBackAmount = sendBackAmount;
     }
 
     /**
      * 支付总金额
      */
-    private Integer totalAmount;
+    private Long totalAmount;
 
-    public Integer getTotalAmount() {
+    public Long getTotalAmount() {
         return totalAmount;
     }
 
-    public void setTotalAmount(Integer totalAmount) {
+    public void setTotalAmount(Long totalAmount) {
         this.totalAmount = totalAmount;
     }
 
     /**
      * 总退款金额
      */
-    private Integer refundAmount;
+    private Long refundAmount;
 
-    public Integer getRefundAmount() {
+    public Long getRefundAmount() {
         return refundAmount;
     }
 
-    public void setRefundAmount(Integer refundAmount) {
+    public void setRefundAmount(Long refundAmount) {
         this.refundAmount = refundAmount;
     }
 
@@ -261,13 +264,13 @@ public class RefundQueryResp extends BaseResp {
     /**
      * 实付部分退款金额
      */
-    private Integer refundInvoiceAmount;
+    private Long refundInvoiceAmount;
 
-    public Integer getRefundInvoiceAmount() {
+    public Long getRefundInvoiceAmount() {
         return refundInvoiceAmount;
     }
 
-    public void setRefundInvoiceAmount(Integer refundInvoiceAmount) {
+    public void setRefundInvoiceAmount(Long refundInvoiceAmount) {
         this.refundInvoiceAmount = refundInvoiceAmount;
     }
 

@@ -17,13 +17,13 @@ public class RefundReq extends BaseReq {
      * 必填
      * 若下单接口中上送了分钟标记字段divisionFlag，则该字段refundAmount等于platformAmount加上subOrders中totalAmount
      */
-    private Integer refundAmount;
+    private Long refundAmount;
 
-    public Integer getRefundAmount() {
+    public Long getRefundAmount() {
         return refundAmount;
     }
 
-    public void setRefundAmount(Integer refundAmount) {
+    public void setRefundAmount(Long refundAmount) {
         this.refundAmount = refundAmount;
     }
 
@@ -33,13 +33,13 @@ public class RefundReq extends BaseReq {
      * 若下单接口中上送了分账标记字段divisionFlag，则该字段必传
      * 且退款接口platformAmount小于下单接口中上送的platformAmount
      */
-    private Integer platformAmount;
+    private Long platformAmount;
 
-    public Integer getPlatformAmount() {
+    public Long getPlatformAmount() {
         return platformAmount;
     }
 
-    public void setPlatformAmount(Integer platformAmount) {
+    public void setPlatformAmount(Long platformAmount) {
         this.platformAmount = platformAmount;
     }
 

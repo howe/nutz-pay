@@ -1,5 +1,7 @@
 package org.nutz.pay.bean.webpay.req;
 
+import org.nutz.lang.Times;
+
 import java.io.Serializable;
 
 /**
@@ -71,7 +73,7 @@ public class BaseReq implements Serializable {
      * 报文请求时间，格式yyyy-MM-dd HH:mm:ss
      * 必填
      */
-    private String requestTimestamp;
+    private String requestTimestamp = Times.getNowSDT();
 
     public String getRequestTimestamp() {
         return requestTimestamp;
@@ -144,7 +146,7 @@ public class BaseReq implements Serializable {
      * YUEDANDEFAULT
      * 必填
      */
-    private String instMid;
+    private String instMid = "YUEDANDEFAULT";
 
     public String getInstMid() {
         return instMid;
@@ -182,4 +184,5 @@ public class BaseReq implements Serializable {
     public void setSign(String sign) {
         this.sign = sign;
     }
+
 }
