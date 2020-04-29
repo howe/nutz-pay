@@ -13,6 +13,7 @@ import java.net.URLEncoder;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.StringJoiner;
 
 /**
  * Created by Nutz Team on 2018/12/14
@@ -155,20 +156,36 @@ public class Util {
      * @return 构建过的字符串
      */
     public static String buildParmas(Map<String, Object> params) {
-
         if (Lang.isEmpty(params)) {
             return null;
         } else {
             params = Util.sorting(params, "asc");
-            StringBuffer sb = new StringBuffer();
+            StringJoiner joiner = new StringJoiner("&");
             params.forEach((k, v) -> {
-                if (!Lang.isEmpty(v)) {
-                    sb.append(k + "=" + v + "&");
+                if (Lang.isNotEmpty(v)) {
+                    joiner.add(k + "=" + v + "&");
                 }
             });
-            return Strings.removeLast(sb.toString().replaceAll("$package", "package")
+            return joiner.toString().replaceAll("$package", "package")
                     .replaceAll(" , ", ",").replaceAll(" ,", ",")
-                    .replaceAll(", ", ","), '&');
+                    .replaceAll(", ", ",");
+        }
+    }
+
+    public static String buildParmasUrl(Map<String, Object> params) {
+        if (Lang.isEmpty(params)) {
+            return null;
+        } else {
+            params = Util.sorting(params, "asc");
+            StringJoiner joiner = new StringJoiner("&");
+            params.forEach((k, v) -> {
+                if (Lang.isNotEmpty(v)) {
+                    joiner.add(k + "=" + Url.encode(v + "") + "&");
+                }
+            });
+            return joiner.toString().replaceAll("$package", "package")
+                    .replaceAll(" , ", ",").replaceAll(" ,", ",")
+                    .replaceAll(", ", ",");
         }
     }
 

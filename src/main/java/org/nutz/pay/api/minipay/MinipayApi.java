@@ -18,6 +18,12 @@ import org.nutz.pay.util.Util;
  */
 public class MinipayApi {
 
+    /**
+     * 下单
+     *
+     * @param req
+     * @return
+     */
     public static CreateResp create(CreateReq req) {
         if (Strings.isBlank(req.getMsgSrc())) {
             throw new NullPointerException("msgSrc为空");

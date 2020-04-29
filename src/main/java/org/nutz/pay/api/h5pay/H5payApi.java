@@ -13,6 +13,12 @@ import org.nutz.pay.util.Util;
  */
 public class H5payApi {
 
+    /**
+     * 下单
+     *
+     * @param req
+     * @return
+     */
     public static String pay(PayReq req) {
         if (Strings.isBlank(req.getMsgSrc())) {
             throw new NullPointerException("msgSrc为空");
@@ -35,7 +41,7 @@ public class H5payApi {
         } else if (Strings.equalsIgnoreCase(req.getMsgType(), Comm.MSGTYPE_WXPAY_H5PAY) && Strings.isBlank(req.getSceneType()) && Strings.isBlank(req.getMerAppId()) && Strings.isBlank(req.getMerAppName())) {
             throw new NullPointerException("缺少微信H5参数");
         } else {
-            return Comm.UMS_WEBPAY_API_GET_GATEWAY + "?" + Util.buildParmas(Lang.obj2map(req));
+            return Comm.UMS_WEBPAY_API_GET_GATEWAY + "?" + Util.buildParmasUrl(Lang.obj2map(req));
         }
     }
 }
