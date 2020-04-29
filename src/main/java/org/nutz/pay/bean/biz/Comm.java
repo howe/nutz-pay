@@ -67,6 +67,26 @@ public class Comm {
     public static String MSGTYPE_TRADE_CREATE = "trade.create";
 
     /**
+     * 支付宝H5支付
+     */
+    public static String MSGTYPE_TRADE_H5PAY = "trade.h5Pay";
+
+    /**
+     * 微信H5支付
+     */
+    public static String MSGTYPE_WXPAY_H5PAY = "WXPay.h5Pay";
+
+    /**
+     * 银联在线无卡
+     */
+    public static String MSGTYPE_QMF_H5PAY = "qmf.h5Pay";
+
+    /**
+     * 银联云闪付
+     */
+    public static String MSGTYPE_UAC_ORDER = "uac.order";
+
+    /**
      * MD5加密
      */
     public static String SIGNTYPE_MD5 = "MD5";
