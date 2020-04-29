@@ -320,5 +320,6 @@ public class GetQRCodeReq extends BaseReq {
 
     public GetQRCodeReq() {
         this.setMsgType("bills.getQRCode");
+        this.setInstMid("QRPAYDEFAULT");
     }
 }

@@ -229,6 +229,16 @@ public class CreateReq extends BaseReq {
         this.subOpenId = subOpenId;
     }
 
+    private String openid;
+
+    public String getOpenid() {
+        return openid;
+    }
+
+    public void setOpenid(String openid) {
+        this.openid = openid;
+    }
+
     /**
      * 实名认证姓名
      * 选填

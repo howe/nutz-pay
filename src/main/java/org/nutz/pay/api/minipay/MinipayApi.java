@@ -39,7 +39,7 @@ public class MinipayApi {
             throw new NullPointerException("sign为空");
         } else if (Lang.isEmpty(req.getTotalAmount())) {
             throw new NullPointerException("totalAmount为空");
-        } else if (Strings.equalsIgnoreCase(req.getMsgType(), Comm.MSGTYPE_WX_UNIFIEDORDER) && Strings.isBlank(req.getSubOpenId())) {
+        } else if (Strings.equalsIgnoreCase(req.getMsgType(), Comm.MSGTYPE_WX_UNIFIEDORDER) && Strings.isBlank(req.getOpenid())) {
             throw new NullPointerException("subOpenId为空");
         } else if (Strings.equalsIgnoreCase(req.getMsgType(), Comm.MSGTYPE_TRADE_CREATE) && Strings.isBlank(req.getUserId())) {
             throw new NullPointerException("userId为空");
