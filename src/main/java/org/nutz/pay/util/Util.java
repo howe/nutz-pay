@@ -160,15 +160,15 @@ public class Util {
             return null;
         } else {
             params = Util.sorting(params, "asc");
-            StringJoiner joiner = new StringJoiner("&");
+            StringBuffer sb = new StringBuffer();
             params.forEach((k, v) -> {
                 if (Lang.isNotEmpty(v)) {
-                    joiner.add(k + "=" + v + "&");
+                    sb.append(k + "=" + v + "&");
                 }
             });
-            return joiner.toString().replaceAll("$package", "package")
+            return Strings.removeLast(sb.toString().replaceAll("$package", "package")
                     .replaceAll(" , ", ",").replaceAll(" ,", ",")
-                    .replaceAll(", ", ",");
+                    .replaceAll(", ", ","), '&');
         }
     }
 
