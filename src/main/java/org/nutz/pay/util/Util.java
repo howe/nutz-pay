@@ -172,23 +172,6 @@ public class Util {
         }
     }
 
-    public static String buildParmasUrl(Map<String, Object> params) {
-        if (Lang.isEmpty(params)) {
-            return null;
-        } else {
-            params = Util.sorting(params, "asc");
-            StringJoiner joiner = new StringJoiner("&");
-            params.forEach((k, v) -> {
-                if (Lang.isNotEmpty(v)) {
-                    joiner.add(k + "=" + Url.encode(v + "") + "&");
-                }
-            });
-            return joiner.toString().replaceAll("$package", "package")
-                    .replaceAll(" , ", ",").replaceAll(" ,", ",")
-                    .replaceAll(", ", ",");
-        }
-    }
-
     /**
      * URL转解码
      */

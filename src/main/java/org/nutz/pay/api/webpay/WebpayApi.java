@@ -53,7 +53,7 @@ public class WebpayApi {
         } else if (Strings.equalsIgnoreCase(req.getMsgType(), Comm.MSGTYPE_WXPAY_JSPAY) && Strings.isBlank(req.getSubAppId()) && Strings.isBlank(req.getSubOpenId())) {
             throw new NullPointerException("subOpenId为空");
         } else {
-            return Comm.UMS_WEBPAY_API_GET_GATEWAY + "?" + Util.buildParmasUrl(Lang.obj2map(req));
+            return Comm.UMS_WEBPAY_API_GET_GATEWAY + "?" + Util.buildParmas(Lang.obj2map(req));
         }
     }
 
