@@ -93,7 +93,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <nutz.version>1.r.68-SNAPSHOT</nutz.version>
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.1</junit.version>
         <servlet.version>3.1.0</servlet.version>
     </properties>
 
